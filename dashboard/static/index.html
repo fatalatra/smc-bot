@@ -1,0 +1,279 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>SMC Bot Dashboard</title>
+<script src="https://unpkg.com/lightweight-charts@4.1.3/dist/lightweight-charts.standalone.production.js"></script>
+<style>
+  :root {
+    --bg: #0e1117;
+    --panel: #161b22;
+    --border: #21262d;
+    --text: #e6edf3;
+    --muted: #7d8590;
+    --green: #3fb950;
+    --red: #f85149;
+    --orange: #ff9b36;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0; background: var(--bg); color: var(--text);
+    font: 14px/1.4 -apple-system, BlinkMacSystemFont, "SF Pro Text", Segoe UI, sans-serif;
+  }
+  header {
+    padding: 10px 16px; border-bottom: 1px solid var(--border);
+    display: flex; align-items: center; gap: 16px; flex-wrap: wrap;
+  }
+  header h1 { margin: 0; font-size: 16px; color: var(--orange); }
+  .tf-group { display: flex; gap: 4px; }
+  .tf-group button {
+    background: var(--panel); border: 1px solid var(--border); color: var(--muted);
+    padding: 4px 10px; border-radius: 4px; cursor: pointer; font: inherit;
+  }
+  .tf-group button.active { color: var(--orange); border-color: var(--orange); }
+  .tf-group button:hover { color: var(--text); }
+  .status-pill {
+    padding: 3px 10px; border-radius: 12px; font-size: 12px; border: 1px solid var(--border);
+  }
+  .status-pill.active { color: var(--green); border-color: var(--green); }
+  .status-pill.paused { color: var(--red); border-color: var(--red); }
+  main {
+    display: grid;
+    grid-template-columns: 1fr 320px;
+    gap: 12px; padding: 12px;
+    height: calc(100vh - 48px);
+  }
+  @media (max-width: 900px) {
+    main { grid-template-columns: 1fr; height: auto; }
+    #chart { height: 60vh; }
+  }
+  #chart {
+    background: var(--panel); border: 1px solid var(--border); border-radius: 6px;
+    overflow: hidden;
+  }
+  .side { display: flex; flex-direction: column; gap: 12px; overflow: auto; }
+  .card {
+    background: var(--panel); border: 1px solid var(--border);
+    border-radius: 6px; padding: 12px;
+  }
+  .card h2 {
+    margin: 0 0 8px; font-size: 12px; text-transform: uppercase;
+    color: var(--muted); letter-spacing: 0.5px;
+  }
+  .kv { display: flex; justify-content: space-between; padding: 3px 0; }
+  .kv .k { color: var(--muted); }
+  .kv .v { font-variant-numeric: tabular-nums; }
+  .long { color: var(--green); }
+  .short { color: var(--red); }
+  table { width: 100%; border-collapse: collapse; font-size: 12px; font-variant-numeric: tabular-nums; }
+  th, td { text-align: left; padding: 4px 6px; border-bottom: 1px solid var(--border); }
+  th { color: var(--muted); font-weight: 500; }
+  .empty { color: var(--muted); font-style: italic; }
+</style>
+</head>
+<body>
+<header>
+  <h1>⚡ SMC BOT</h1>
+  <div class="tf-group" id="tf-group">
+    <button data-tf="Min1">1m</button>
+    <button data-tf="Min5" class="active">5m</button>
+    <button data-tf="Min15">15m</button>
+    <button data-tf="Min60">1h</button>
+    <button data-tf="Hour4">4h</button>
+  </div>
+  <span id="price" style="margin-left:auto; font-size:16px; font-variant-numeric: tabular-nums;">—</span>
+  <span id="status-pill" class="status-pill">...</span>
+</header>
+<main>
+  <div id="chart"></div>
+  <aside class="side">
+    <div class="card">
+      <h2>Текущая позиция</h2>
+      <div id="position"><div class="empty">нет открытых</div></div>
+    </div>
+    <div class="card">
+      <h2>Статус бота</h2>
+      <div id="status"></div>
+    </div>
+    <div class="card">
+      <h2>Сканер (последний тик)</h2>
+      <div id="diag"><div class="empty">загрузка...</div></div>
+    </div>
+    <div class="card">
+      <h2>Последние сделки</h2>
+      <div id="trades"><div class="empty">загрузка...</div></div>
+    </div>
+  </aside>
+</main>
+
+<script>
+const fmt = (n, d=2) => n == null ? '—' : Number(n).toLocaleString('en-US', {minimumFractionDigits:d, maximumFractionDigits:d});
+const fmtTs = (s) => {
+  if (!s) return '—';
+  const d = new Date(s * 1000);
+  return d.toLocaleString('ru-RU', {month:'2-digit', day:'2-digit', hour:'2-digit', minute:'2-digit'});
+};
+
+const chartEl = document.getElementById('chart');
+const chart = LightweightCharts.createChart(chartEl, {
+  layout: { background: {type:'solid', color:'#161b22'}, textColor:'#e6edf3' },
+  grid: { vertLines: {color:'#21262d'}, horzLines: {color:'#21262d'} },
+  rightPriceScale: { borderColor:'#21262d' },
+  timeScale: {
+    borderColor:'#21262d',
+    timeVisible: true,
+    secondsVisible: false,
+    rightOffset: 12,
+    barSpacing: 9,
+  },
+  crosshair: { mode: 1 },
+});
+const candleSeries = chart.addCandlestickSeries({
+  upColor:'#3fb950', downColor:'#f85149',
+  borderUpColor:'#3fb950', borderDownColor:'#f85149',
+  wickUpColor:'#3fb950', wickDownColor:'#f85149',
+});
+window.addEventListener('resize', () => {
+  chart.applyOptions({ width: chartEl.clientWidth, height: chartEl.clientHeight });
+});
+chart.applyOptions({ width: chartEl.clientWidth, height: chartEl.clientHeight });
+
+let currentTf = 'Min5';
+let posLines = [];
+
+async function loadCandles(tf) {
+  const r = await fetch(`/api/candles?interval=${tf}&count=300`);
+  const data = await r.json();
+  candleSeries.setData(data.map(c => ({ time: c.time, open: c.open, high: c.high, low: c.low, close: c.close })));
+  const visibleBars = 90;
+  const n = data.length;
+  chart.timeScale().setVisibleLogicalRange({ from: Math.max(0, n - visibleBars), to: n + 12 });
+}
+
+async function loadPosition() {
+  const r = await fetch('/api/position');
+  const data = await r.json();
+  const el = document.getElementById('position');
+  document.getElementById('price').textContent = data.price ? '$' + fmt(data.price) : '—';
+
+  posLines.forEach(l => candleSeries.removePriceLine(l));
+  posLines = [];
+
+  if (!data.positions.length) {
+    el.innerHTML = '<div class="empty">нет открытых</div>';
+    return;
+  }
+  el.innerHTML = data.positions.map(p => {
+    const cls = p.side === 'long' ? 'long' : 'short';
+    const sideLbl = p.side === 'long' ? 'LONG' : 'SHORT';
+    const pnlCls = p.pnl_pct >= 0 ? 'long' : 'short';
+    return `
+      <div class="kv"><span class="k">Сторона</span><span class="v ${cls}">${sideLbl}</span></div>
+      <div class="kv"><span class="k">Вход</span><span class="v">$${fmt(p.entry)}</span></div>
+      <div class="kv"><span class="k">SL</span><span class="v short">$${fmt(p.sl)}</span></div>
+      <div class="kv"><span class="k">TP</span><span class="v long">$${fmt(p.tp)}</span></div>
+      <div class="kv"><span class="k">PnL (x${30})</span><span class="v ${pnlCls}">${fmt(p.pnl_pct)}%</span></div>
+      <div class="kv"><span class="k">Открыта</span><span class="v">${fmtTs(p.open_ts)}</span></div>
+    `;
+  }).join('<hr style="border:none;border-top:1px solid var(--border);margin:6px 0;">');
+
+  data.positions.forEach(p => {
+    posLines.push(candleSeries.createPriceLine({ price: p.entry, color: '#ff9b36', lineWidth: 1, lineStyle: 0, axisLabelVisible: true, title: 'ENTRY' }));
+    posLines.push(candleSeries.createPriceLine({ price: p.sl, color: '#f85149', lineWidth: 1, lineStyle: 2, axisLabelVisible: true, title: 'SL' }));
+    posLines.push(candleSeries.createPriceLine({ price: p.tp, color: '#3fb950', lineWidth: 1, lineStyle: 2, axisLabelVisible: true, title: 'TP' }));
+  });
+}
+
+async function loadStatus() {
+  const r = await fetch('/api/status');
+  const data = await r.json();
+  const pill = document.getElementById('status-pill');
+  if (data.paused) { pill.textContent = '⏸ PAUSED'; pill.className = 'status-pill paused'; }
+  else { pill.textContent = '▶ ACTIVE'; pill.className = 'status-pill active'; }
+
+  const daily = data.daily || {};
+  const pnl = daily.pnl || 0;
+  const pnlCls = pnl >= 0 ? 'long' : 'short';
+  document.getElementById('status').innerHTML = `
+    <div class="kv"><span class="k">Баланс</span><span class="v">$${fmt(data.balance)}</span></div>
+    <div class="kv"><span class="k">Символ</span><span class="v">${data.symbol}</span></div>
+    <div class="kv"><span class="k">Плечо</span><span class="v">x${data.leverage}</span></div>
+    <div class="kv"><span class="k">Риск</span><span class="v">${data.risk_pct}%</span></div>
+    <div class="kv"><span class="k">Мин R:R</span><span class="v">${data.min_rr}</span></div>
+    <div class="kv"><span class="k">Старт дня</span><span class="v">$${fmt(daily.start_balance)}</span></div>
+    <div class="kv"><span class="k">PnL сегодня</span><span class="v ${pnlCls}">$${fmt(pnl)}</span></div>
+  `;
+
+  const d = data.diag || {};
+  const atrMin = data.atr_ratio_min;
+  const atr = d.atr_ratio != null ? Number(d.atr_ratio) : (d.ratio != null ? Number(d.ratio) : null);
+  const atrCls = atr == null ? '' : (atr >= atrMin ? 'long' : 'short');
+  const skip = d.skip || null;
+  const trend = d.trend || d.trend_htf || '—';
+  const trendCls = trend === 'bullish' ? 'long' : (trend === 'bearish' ? 'short' : '');
+  const sigs = d.sigs != null ? d.sigs : '—';
+  const obs = d.obs_fresh != null ? d.obs_fresh : (d.obs != null ? d.obs : '—');
+  const fvgs = d.fvgs != null ? d.fvgs : '—';
+  const bos = d.bos != null ? d.bos : '—';
+
+  let statusLine;
+  if (skip) {
+    statusLine = `<span class="short">⛔ BLOCK: ${skip}</span>`;
+  } else if (sigs !== '—' && sigs > 0) {
+    statusLine = `<span class="long">✅ SIGNAL × ${sigs}</span>`;
+  } else {
+    statusLine = `<span style="color:var(--muted)">🔍 сканирует, пока без сигнала</span>`;
+  }
+
+  document.getElementById('diag').innerHTML = `
+    <div class="kv"><span class="k">Состояние</span><span class="v">${statusLine}</span></div>
+    <div class="kv"><span class="k">Тренд</span><span class="v ${trendCls}">${trend}</span></div>
+    <div class="kv"><span class="k">ATR ratio</span><span class="v ${atrCls}">${atr != null ? fmt(atr, 2) : '—'} / ${atrMin}</span></div>
+    <div class="kv"><span class="k">Свежие OB</span><span class="v">${obs}</span></div>
+    <div class="kv"><span class="k">FVG</span><span class="v">${fvgs}</span></div>
+    <div class="kv"><span class="k">BOS</span><span class="v">${bos}</span></div>
+    <div class="kv"><span class="k">Сигналов</span><span class="v">${sigs}</span></div>
+  `;
+}
+
+async function loadTrades() {
+  const r = await fetch('/api/trades?limit=20');
+  const data = await r.json();
+  const el = document.getElementById('trades');
+  if (!data.length) { el.innerHTML = '<div class="empty">нет сделок</div>'; return; }
+  el.innerHTML = '<table><thead><tr><th>Время</th><th>Сторона</th><th>Вход</th><th>PnL</th><th>Статус</th></tr></thead><tbody>' +
+    data.map(t => {
+      const cls = t.side === 'long' ? 'long' : 'short';
+      const pnlCls = (t.pnl || 0) >= 0 ? 'long' : 'short';
+      const stat = t.status === 'open' ? '🟡' : (t.pnl > 0 ? '✅' : (t.pnl < 0 ? '❌' : '⚪'));
+      return `<tr>
+        <td>${fmtTs(t.open_ts)}</td>
+        <td class="${cls}">${t.side.toUpperCase()}</td>
+        <td>$${fmt(t.entry)}</td>
+        <td class="${pnlCls}">${t.pnl != null ? '$' + fmt(t.pnl) : '—'}</td>
+        <td>${stat}</td>
+      </tr>`;
+    }).join('') + '</tbody></table>';
+}
+
+document.getElementById('tf-group').addEventListener('click', e => {
+  if (e.target.tagName !== 'BUTTON') return;
+  document.querySelectorAll('#tf-group button').forEach(b => b.classList.remove('active'));
+  e.target.classList.add('active');
+  currentTf = e.target.dataset.tf;
+  loadCandles(currentTf);
+});
+
+async function refresh() {
+  try {
+    await Promise.all([loadCandles(currentTf), loadPosition(), loadStatus(), loadTrades()]);
+  } catch (e) { console.error(e); }
+}
+
+refresh();
+setInterval(() => { loadPosition(); loadStatus(); loadTrades(); }, 15000);
+setInterval(() => loadCandles(currentTf), 60000);
+</script>
+</body>
+</html>
