@@ -165,8 +165,8 @@ async function loadPosition() {
     return;
   }
   el.innerHTML = data.positions.map(p => {
-    const cls = p.side === 'long' ? 'long' : 'short';
-    const sideLbl = p.side === 'long' ? 'LONG' : 'SHORT';
+    const cls = ['BUY','long','LONG'].includes(p.side) ? 'long' : 'short';
+    const sideLbl = ['BUY','long','LONG'].includes(p.side) ? 'LONG' : 'SHORT';
     const pnlCls = (p.pnl_usd != null ? p.pnl_usd : 0) >= 0 ? "long" : "short";
     return `
       <div class="kv"><span class="k">Сторона</span><span class="v ${cls}">${sideLbl}</span></div>
@@ -244,12 +244,12 @@ async function loadTrades() {
   if (!data.length) { el.innerHTML = '<div class="empty">нет сделок</div>'; return; }
   el.innerHTML = '<table><thead><tr><th>Время</th><th>Сторона</th><th>Вход</th><th>PnL</th><th>Статус</th></tr></thead><tbody>' +
     data.map(t => {
-      const cls = t.side === 'long' ? 'long' : 'short';
+      const cls = ['BUY','long','LONG'].includes(t.side) ? 'long' : 'short';
       const pnlCls = (t.pnl || 0) >= 0 ? 'long' : 'short';
       const stat = t.status === 'open' ? '🟡' : (t.pnl > 0 ? '✅' : (t.pnl < 0 ? '❌' : '⚪'));
       return `<tr>
         <td>${fmtTs(t.open_ts)}</td>
-        <td class="${cls}">${t.side.toUpperCase()}</td>
+        <td class="${cls}">${(['BUY','long','LONG'].includes(t.side) ? 'LONG' : 'SHORT')}</td>
         <td>$${fmt(t.entry)}</td>
         <td class="${pnlCls}">${t.pnl != null ? '$' + fmt(t.pnl) : '—'}</td>
         <td>${stat}</td>
