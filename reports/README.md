@@ -1,0 +1,1 @@
+# SMC Bot Analyst Reports
