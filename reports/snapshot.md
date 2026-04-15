@@ -1,7 +1,7 @@
-# Bot Snapshot — 2026-04-15 13:48 UTC
+# Bot Snapshot — 2026-04-15 13:56 UTC
 
 ## Service: active
-balance=$397.85
+balance=$394.09
 
 ## Config
 POST_CLOSE_COOLDOWN: int = 1800 # 30 мин после закрытия
@@ -10,12 +10,24 @@ ADX_MIN: float = 20.0 # ADX < 20 → choppy market, skip entry
 
 ## Trades (last 20)
 ```
-err
+13|BUY|74275.5||open|2026-04-15 13:30:37|
+12|SELL|73899.1|39.1|closed|2026-04-15 06:09:07|2026-04-15 07:46:09
+11|BUY|74056.1|-3.16|closed|2026-04-14 19:38:54|2026-04-14 21:21:29
+10|BUY|74270.7|-18.86|closed|2026-04-14 19:08:32|2026-04-14 19:33:51
+9|BUY|74842.7|-22.95|closed|2026-04-14 15:24:35|2026-04-14 17:34:53
+8|BUY|75630.3|-3.46|closed|2026-04-14 14:22:42|2026-04-14 15:00:43
+7|SELL|70843.3|-11.35|closed|2026-04-12 15:59:14|2026-04-12 17:51:45
+6|SELL|70977.6|16.89|closed|2026-04-12 13:15:20|2026-04-12 14:43:04
+5|SELL|71364.3|13.27|closed|2026-04-12 10:57:04|2026-04-12 13:01:46
+4|SELL|71492.1|13.27|closed|2026-04-12 10:41:17|2026-04-12 10:42:19
+3|SELL|71597.7|13.27|closed|2026-04-12 10:25:37|2026-04-12 10:42:19
+2|SELL|73451.8|13.15|closed|2026-04-11 20:18:03|2026-04-12 08:14:54
+1|SELL|73575.9|13.15|closed|2026-04-11 20:01:37|2026-04-12 08:14:54
 ```
 
 ## Daily PnL
 ```
-2026-04-15|363.1|34.75|0
+2026-04-15|363.1|30.99|0
 2026-04-14|413.74|-50.64|0
 2026-04-13|413.74|0.0|0
 2026-04-12|423.86|-10.12|0
@@ -24,12 +36,12 @@ err
 
 ## Open Positions
 ```
-none
+13|BUY|74275.5|open
 ```
 
 ## Diag Summary (last ~4h)
 ```
-    179 trend_htf=ranging trend_mid=ranging skip=trend_mismatch
+    184 trend_htf=ranging trend_mid=ranging skip=trend_mismatch
       2 trend=bearish atr_ratio=1.15 obs=7 obs_fresh=7 fvgs=19 bos=21 sigs=0 wrong_side=5 price_out=0 bos_miss=0 risk_neg=0 liquidity_trap=2 near_gap_pct=0.066
       2 trend=bearish atr_ratio=1.09 obs=7 obs_fresh=7 fvgs=17 bos=23 sigs=0 wrong_side=5 price_out=0 bos_miss=0 risk_neg=0 liquidity_trap=2 near_gap_pct=0.072
       1 trend=bullish atr_ratio=1.08 obs=7 obs_fresh=6 fvgs=13 bos=22 sigs=1 wrong_side=1 price_out=0 bos_miss=0 risk_neg=0 liquidity_trap=2 near_gap_pct=-0.08 skip=side_busy open_sides=['BUY']
@@ -77,22 +89,6 @@ httpx.ConnectError: [SSL: TLSV1_ALERT_INTERNAL_ERROR] tlsv1 alert internal error
 
 ## Last 100 Log Lines
 ```
-[15:15:55] tick balance=$408.86
-  diag: trend_htf=ranging trend_mid=ranging skip=trend_mismatch
-[15:16:57] tick balance=$408.86
-  diag: trend_htf=ranging trend_mid=ranging skip=trend_mismatch
-[15:18:00] tick balance=$408.86
-  diag: trend_htf=ranging trend_mid=ranging skip=trend_mismatch
-[15:19:04] tick balance=$408.86
-  diag: trend_htf=ranging trend_mid=ranging skip=trend_mismatch
-[15:20:06] tick balance=$408.86
-  diag: trend_htf=ranging trend_mid=ranging skip=trend_mismatch
-[15:21:09] tick balance=$408.86
-  diag: trend_htf=ranging trend_mid=ranging skip=trend_mismatch
-[15:22:11] tick balance=$408.86
-  diag: trend_htf=ranging trend_mid=ranging skip=trend_mismatch
-[15:23:14] tick balance=$408.86
-  diag: trend_htf=ranging trend_mid=ranging skip=trend_mismatch
 [15:24:17] tick balance=$408.86
   diag: trend_htf=ranging trend_mid=ranging skip=trend_mismatch
 [15:25:19] tick balance=$408.86
@@ -176,5 +172,21 @@ Commands: /start /stop /status /help
 [15:47:01] tick balance=$395.95
   diag: trend_htf=ranging trend_mid=ranging skip=trend_mismatch
 [15:48:04] tick balance=$397.85
+  diag: trend_htf=ranging trend_mid=ranging skip=trend_mismatch
+[15:49:07] tick balance=$394.97
+  diag: trend_htf=ranging trend_mid=ranging skip=trend_mismatch
+[15:50:11] tick balance=$395.90
+  diag: trend_htf=ranging trend_mid=ranging skip=trend_mismatch
+[15:51:14] tick balance=$395.22
+  diag: trend_htf=ranging trend_mid=ranging skip=trend_mismatch
+[15:52:17] tick balance=$392.28
+  diag: trend_htf=ranging trend_mid=ranging skip=trend_mismatch
+[15:53:20] tick balance=$393.42
+  diag: trend_htf=ranging trend_mid=ranging skip=trend_mismatch
+[15:54:23] tick balance=$394.43
+  diag: trend_htf=ranging trend_mid=ranging skip=trend_mismatch
+[15:55:27] tick balance=$393.95
+  diag: trend_htf=ranging trend_mid=ranging skip=trend_mismatch
+[15:56:30] tick balance=$394.09
   diag: trend_htf=ranging trend_mid=ranging skip=trend_mismatch
 ```
