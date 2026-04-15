@@ -4,7 +4,7 @@ from dataclasses import dataclass
 class Config:
     SYMBOL: str = "BTC_USDT"
     WATCH_SYMBOL: str = "SOL_USDT"  # shadow watcher (без реальных сделок)
-    WATCH_ENABLED: bool = True
+    WATCH_ENABLED: bool = False
     LEVERAGE: int = 30
     RISK_PCT: float = 0.05          # 5% от баланса на сделку
     MIN_RR: float = 2.5             # минимальный Risk:Reward
@@ -30,6 +30,7 @@ class Config:
     ATR_RATIO_MIN: float = 0.8       # ATR(14) >= ATR(50) * 0.8 — текущая волатильность не сильно ниже среднего
     ADX_PERIOD: int = 14
     ADX_MIN: float = 20.0             # ADX < 20 → choppy market, skip entry
+    TREND_MIN_STABLE: int = 900       # тренд должен держаться 15 мин перед входом
     SL_ATR_MULT: float = 0.5         # SL буфер от края OB = ATR(14) * 0.5
 
     # Сессионный фильтр (UTC часы) — Лондон + NY

@@ -8,6 +8,7 @@ Multi-Timeframe Logic с фильтрами качества:
 - OB mitigation: каждый OB торгуется один раз (state dict)
 """
 import datetime
+import time
 from exchange.models import Candle, Signal, Side, OrderBlock, FVG
 from strategy.smc import (
     find_swings, detect_trend_combined, find_order_blocks, find_fvg,
@@ -102,6 +103,20 @@ def analyze_mtf(candles_4h: list[Candle],
         return [], {"trend_htf": trend_4h, "trend_mid": trend_1h, "skip": "trend_mismatch"}
 
     trend = trend_4h if trend_4h != "ranging" else trend_1h
+
+    # 2b) Trend stability: не входить пока тренд не простоял TREND_MIN_STABLE сек
+    prev_trend = state.get('_trend_dir')
+    now_ts = time.time()
+    if trend != prev_trend:
+        state['_trend_dir'] = trend
+        state['_trend_since'] = now_ts
+    trend_age = now_ts - state.get('_trend_since', 0)
+    if trend_age < config.TREND_MIN_STABLE:
+        return [], {
+            'trend': trend, 'skip': 'trend_immature',
+            'trend_age_s': int(trend_age),
+            'need_s': config.TREND_MIN_STABLE,
+        }
 
     # 3) Относительный ATR фильтр (15M)
     atr_short = compute_atr(candles_15m, config.ATR_PERIOD)
