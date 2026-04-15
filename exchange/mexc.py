@@ -262,3 +262,11 @@ class MexcFutures:
         result = await self._private_post("/api/v1/private/stoporder/change_plan_price", data)
         print(f"[change_stop_loss] id={stop_plan_order_id} new_sl={new_sl_price} tp_preserved={current_tp} resp={result}", flush=True)
         return result
+
+    async def get_history_orders(self, symbol: str, page_size: int = 100) -> list:
+        """Fetch closed order history — contains profit, fee, positionId."""
+        resp = await self._private_get(
+            "/api/v1/private/order/list/history_orders",
+            {"symbol": symbol, "page_size": page_size, "page_num": 1},
+        )
+        return resp.get("data", []) or []

@@ -182,3 +182,23 @@ def get_today_trade_count() -> int:
     n = c.fetchone()[0]
     conn.close()
     return int(n)
+
+
+def update_trade_pnl(trade_id: int, pnl: float, profit: float = 0.0, fees: float = 0.0):
+    """Update real PnL for a closed trade (fetched from MEXC order history)."""
+    conn = sqlite3.connect(DB_PATH)
+    c = conn.cursor()
+    c.execute("UPDATE trades SET pnl=? WHERE id=?", (pnl, trade_id))
+    conn.commit()
+    conn.close()
+
+
+def get_trades_needing_pnl() -> list:
+    """Closed trades with pnl=0 that need real PnL from MEXC."""
+    conn = sqlite3.connect(DB_PATH)
+    c = conn.cursor()
+    c.execute("SELECT id, order_id, side FROM trades WHERE status=? AND pnl=0.0",
+              ("closed",))
+    rows = c.fetchall()
+    conn.close()
+    return rows

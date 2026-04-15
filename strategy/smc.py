@@ -175,3 +175,69 @@ def detect_bos(highs: list, lows: list) -> list[dict]:
         if lows[i][1] < lows[i - 1][1]:
             events.append({"type": "BOS", "side": "bearish", "level": lows[i - 1][1], "ts": lows[i][2]})
     return events
+
+
+def compute_adx(candles: list[Candle], period: int = 14) -> float:
+    """Average Directional Index — сила тренда (0-100).
+    ADX < 20 = слабый тренд / боковик, ADX > 25 = трендовый рынок.
+    Wilder smoothing."""
+    if len(candles) < period * 2 + 1:
+        return 0.0
+
+    plus_dm = []
+    minus_dm = []
+    tr_list = []
+
+    for i in range(1, len(candles)):
+        high = candles[i].high
+        low = candles[i].low
+        prev_high = candles[i - 1].high
+        prev_low = candles[i - 1].low
+        prev_close = candles[i - 1].close
+
+        up = high - prev_high
+        down = prev_low - low
+
+        plus_dm.append(up if up > down and up > 0 else 0.0)
+        minus_dm.append(down if down > up and down > 0 else 0.0)
+
+        tr = max(high - low, abs(high - prev_close), abs(low - prev_close))
+        tr_list.append(tr)
+
+    if len(tr_list) < period:
+        return 0.0
+
+    # Wilder smoothing: running sum method
+    sm_plus = sum(plus_dm[:period])
+    sm_minus = sum(minus_dm[:period])
+    sm_tr = sum(tr_list[:period])
+
+    dx_values = []
+
+    for i in range(period, len(tr_list)):
+        sm_plus = sm_plus - sm_plus / period + plus_dm[i]
+        sm_minus = sm_minus - sm_minus / period + minus_dm[i]
+        sm_tr = sm_tr - sm_tr / period + tr_list[i]
+
+        if sm_tr == 0:
+            continue
+
+        plus_di = 100 * sm_plus / sm_tr
+        minus_di = 100 * sm_minus / sm_tr
+
+        di_sum = plus_di + minus_di
+        if di_sum == 0:
+            continue
+
+        dx = 100 * abs(plus_di - minus_di) / di_sum
+        dx_values.append(dx)
+
+    if len(dx_values) < period:
+        return 0.0
+
+    # ADX = Wilder smoothed DX
+    adx = sum(dx_values[:period]) / period
+    for dx in dx_values[period:]:
+        adx = (adx * (period - 1) + dx) / period
+
+    return adx

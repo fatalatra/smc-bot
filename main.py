@@ -21,6 +21,7 @@ from db.storage import (
     init_daily_pnl, update_daily_pnl, set_daily_stopped, is_daily_stopped,
     clear_daily_stopped,
     get_today_start_balance, get_today_trade_count, get_last_close_ts,
+    update_trade_pnl, get_trades_needing_pnl,
 )
 
 _breakeven_done = set()
@@ -44,6 +45,7 @@ async def main():
     price = await mexc.get_ticker(config.SYMBOL)
 
     init_daily_pnl(balance)
+    await backfill_real_pnl(mexc)  # backfill any missed PnL from previous runs
 
     daily_pnl_at_start = update_daily_pnl(balance)
     start_bal_today = get_today_start_balance() or balance
@@ -187,6 +189,8 @@ async def main():
                 # Без этого закрытые на бирже сделки остаются в БД как "open" →
                 # дашборд показывает призраков, check_partial_tp пытается работать на мертвых.
                 close_events = sync_closed_trades(positions, price_now or 0.0)
+                if close_events:
+                    await backfill_real_pnl(mexc)
                 for ev in close_events:
                     if ev["reason"] == "manual":
                         set_paused(
@@ -351,6 +355,7 @@ def sync_closed_trades(positions: list, current_price: float = 0.0) -> list:
         events.append({
             "id": trade_id, "side": side, "entry": entry,
             "sl": sl, "tp": tp, "reason": reason,
+            "order_id": row[10] if len(row) > 10 else None,
         })
     return events
 
@@ -610,6 +615,63 @@ async def watch_sol(mexc: MexcFutures) -> None:
             )
     except Exception as e:
         print(f"[sol watch err] {e}", flush=True)
+
+
+
+async def backfill_real_pnl(mexc: MexcFutures):
+    """Fetch real PnL from MEXC order history for closed trades with pnl=0."""
+    trades = get_trades_needing_pnl()
+    if not trades:
+        return
+    try:
+        history = await mexc.get_history_orders(config.SYMBOL, page_size=100)
+    except Exception as e:
+        print(f"[real_pnl] fetch history err: {e}", flush=True)
+        return
+
+    # Index orders by orderId for opening match, group by positionId
+    by_order_id = {}
+    by_position = {}
+    for order in history:
+        oid = str(order.get("orderId", ""))
+        pid = order.get("positionId")
+        by_order_id[oid] = order
+        if pid:
+            by_position.setdefault(pid, []).append(order)
+
+    for trade_id, order_id, side in trades:
+        order_id = str(order_id or "")
+        opening = by_order_id.get(order_id)
+        if not opening:
+            continue
+        pid = opening.get("positionId")
+        if not pid or pid not in by_position:
+            continue
+
+        # Find closing order in same position (has profit != 0 or is a stoporder close)
+        closing = None
+        for o in by_position[pid]:
+            if str(o.get("orderId")) == order_id:
+                continue  # skip opening order
+            ext = str(o.get("externalOid", ""))
+            if o.get("profit", 0) != 0 or "stoporder" in ext:
+                closing = o
+                break
+
+        if not closing:
+            continue
+
+        profit = float(closing.get("profit", 0))
+        close_fee = float(closing.get("fee", 0))   # negative
+        open_fee = float(opening.get("fee", 0))     # negative
+        real_pnl = round(profit + close_fee + open_fee, 4)
+
+        update_trade_pnl(trade_id, real_pnl)
+        print(
+            f"[real_pnl] trade #{trade_id}: profit={profit:.2f} "
+            f"open_fee={open_fee:.2f} close_fee={close_fee:.2f} => net={real_pnl:.2f}",
+            flush=True,
+        )
 
 
 async def scan_and_trade(mexc: MexcFutures, daily_pnl: float) -> dict:

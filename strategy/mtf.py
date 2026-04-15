@@ -11,7 +11,7 @@ import datetime
 from exchange.models import Candle, Signal, Side, OrderBlock, FVG
 from strategy.smc import (
     find_swings, detect_trend_combined, find_order_blocks, find_fvg,
-    detect_bos, compute_atr,
+    detect_bos, compute_atr, compute_adx,
 )
 from config import config
 

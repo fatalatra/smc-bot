@@ -22,12 +22,14 @@ class Config:
 
     # Дедупликация сигналов (сек)
     SIGNAL_COOLDOWN: int = 900       # 15 мин между одинаковыми сигналами
-    POST_CLOSE_COOLDOWN: int = 300   # 5 мин (temp 24h до ~2026-04-15 17:05 UTC)
+    POST_CLOSE_COOLDOWN: int = 1800   # 30 мин после закрытия
 
     # ATR фильтр волатильности (15M свечи)
     ATR_PERIOD: int = 14
     ATR_LONG_PERIOD: int = 50
     ATR_RATIO_MIN: float = 0.8       # ATR(14) >= ATR(50) * 0.8 — текущая волатильность не сильно ниже среднего
+    ADX_PERIOD: int = 14
+    ADX_MIN: float = 20.0             # ADX < 20 → choppy market, skip entry
     SL_ATR_MULT: float = 0.5         # SL буфер от края OB = ATR(14) * 0.5
 
     # Сессионный фильтр (UTC часы) — Лондон + NY
