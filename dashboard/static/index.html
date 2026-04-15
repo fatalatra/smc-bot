@@ -173,7 +173,7 @@ async function loadPosition() {
       <div class="kv"><span class="k">Вход</span><span class="v">$${fmt(p.entry)}</span></div>
       <div class="kv"><span class="k">SL</span><span class="v short">$${fmt(p.sl)}</span></div>
       <div class="kv"><span class="k">TP</span><span class="v long">$${fmt(p.tp)}</span></div>
-      <div class="kv"><span class="k">PnL (x${30})</span><span class="v ${pnlCls}">${fmt(p.pnl_pct)}%</span></div>
+      <div class="kv"><span class="k">PnL</span><span class="v ${pnlCls}">$\${p.pnl_usd != null ? fmt(p.pnl_usd) : "—"} (${fmt(p.pnl_pct)}%)</span></div>
       <div class="kv"><span class="k">Открыта</span><span class="v">${fmtTs(p.open_ts)}</span></div>
     `;
   }).join('<hr style="border:none;border-top:1px solid var(--border);margin:6px 0;">');

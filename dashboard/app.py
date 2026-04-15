@@ -105,15 +105,19 @@ async def api_position():
         tp = live_tp if live_tp is not None else r["tp"]
         side = r["side"]
         pnl_pct = None
+        pnl_usd = None
         if price and entry:
             if side in ("BUY", "long", "LONG"):
                 pnl_pct = (price - entry) / entry * 100 * config.LEVERAGE
+                pnl_usd = (price - entry) * r["vol"] * 0.0001
             else:
                 pnl_pct = (entry - price) / entry * 100 * config.LEVERAGE
+                pnl_usd = (entry - price) * r["vol"] * 0.0001
         positions.append({
             "id": r["id"], "open_ts": r["open_ts"], "side": side,
             "entry": entry, "sl": sl, "tp": tp, "vol": r["vol"],
             "pnl_pct": round(pnl_pct, 2) if pnl_pct is not None else None,
+            "pnl_usd": round(pnl_usd, 2) if pnl_usd is not None else None,
         })
     return {"price": price, "positions": positions}
 
