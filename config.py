@@ -22,7 +22,7 @@ class Config:
 
     # Дедупликация сигналов (сек)
     SIGNAL_COOLDOWN: int = 900       # 15 мин между одинаковыми сигналами
-    POST_CLOSE_COOLDOWN: int = 1800   # 30 мин после закрытия
+    POST_CLOSE_COOLDOWN: int = 180   # 3 мин техническая пауза после закрытия
 
     # ATR фильтр волатильности (15M свечи)
     ATR_PERIOD: int = 14
