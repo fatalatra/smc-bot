@@ -1,4 +1,4 @@
-# Bot Snapshot — 2026-04-16 22:55 UTC
+# Bot Snapshot — 2026-04-17 02:55 UTC
 
 ## Service: active
 balance=$328.70
@@ -31,6 +31,7 @@ ADX_MIN: float = 20.0 # ADX < 20 → choppy market, skip entry
 
 ## Daily PnL
 ```
+2026-04-17|328.7|0.0|0
 2026-04-16|381.29|-52.59|0
 2026-04-15|363.1|17.9|0
 2026-04-14|413.74|-50.64|0
@@ -46,26 +47,26 @@ none
 
 ## Diag Summary (last ~4h)
 ```
-    194 trend_htf=ranging trend_mid=ranging skip=trend_mismatch
-      7 trend=bullish skip=atr_low ratio=0.69 min=0.8
-      4 trend=bullish skip=atr_low ratio=0.7 min=0.8
-      3 trend=bullish skip=atr_low ratio=0.68 min=0.8
-      2 trend=bullish skip=atr_low ratio=0.78 min=0.8
-      2 trend=bullish skip=atr_low ratio=0.73 min=0.8
+    133 trend_htf=ranging trend_mid=ranging skip=trend_mismatch
+      7 trend=bullish skip=atr_low ratio=0.74 min=0.8
+      6 trend=bullish skip=atr_low ratio=0.8 min=0.8
+      6 trend=bullish skip=atr_low ratio=0.76 min=0.8
+      6 trend=bullish skip=atr_low ratio=0.72 min=0.8
+      6 trend=bullish skip=atr_low ratio=0.69 min=0.8
+      5 trend=bullish skip=atr_low ratio=0.77 min=0.8
+      4 trend=bullish skip=atr_low ratio=0.73 min=0.8
+      3 trend=bullish skip=atr_low ratio=0.7 min=0.8
+      3 trend=bullish skip=atr_low ratio=0.79 min=0.8
+      2 trend=bullish skip=atr_low ratio=0.75 min=0.8
       2 trend=bullish skip=atr_low ratio=0.71 min=0.8
-      2 trend=bullish skip=atr_low ratio=0.67 min=0.8
-      1 trend=bullish skip=trend_immature trend_age_s=62 need_s=900
-      1 trend=bullish skip=trend_immature trend_age_s=248 need_s=900
-      1 trend=bullish skip=trend_immature trend_age_s=186 need_s=900
-      1 trend=bullish skip=trend_immature trend_age_s=124 need_s=900
-      1 trend=bullish skip=trend_immature trend_age_s=0 need_s=900
-      1 trend=bullish skip=atr_low ratio=0.77 min=0.8
-      1 trend=bullish skip=atr_low ratio=0.76 min=0.8
-      1 trend=bullish skip=atr_low ratio=0.72 min=0.8
-      1 trend=bullish atr_ratio=0.8 obs=9 obs_fresh=9 fvgs=13 bos=27 sigs=0 wrong_side=3 price_out=1 bos_miss=0 risk_neg=0 liquidity_trap=5 near_gap_pct=-0.093
-      1 trend=bullish atr_ratio=0.8 obs=8 obs_fresh=8 fvgs=13 bos=26 sigs=0 wrong_side=3 price_out=3 bos_miss=0 risk_neg=0 liquidity_trap=2 near_gap_pct=-0.095
-      1 trend=bullish atr_ratio=0.82 obs=9 obs_fresh=9 fvgs=13 bos=26 sigs=0 wrong_side=3 price_out=3 bos_miss=0 risk_neg=0 liquidity_trap=3 near_gap_pct=-0.056
-      1 trend=bullish atr_ratio=0.81 obs=9 obs_fresh=9 fvgs=14 bos=27 sigs=0 wrong_side=3 price_out=1 bos_miss=0 risk_neg=0 liquidity_trap=5 near_gap_pct=-0.061
+      1 trend=bullish skip=atr_low ratio=0.78 min=0.8
+      1 trend=bullish atr_ratio=0.9 obs=12 obs_fresh=12 fvgs=9 bos=24 sigs=0 wrong_side=4 price_out=1 bos_miss=0 risk_neg=0 liquidity_trap=7 near_gap_pct=-0.0
+      1 trend=bullish atr_ratio=0.9 obs=12 obs_fresh=12 fvgs=10 bos=24 sigs=0 wrong_side=4 price_out=0 bos_miss=0 risk_neg=0 liquidity_trap=8 near_gap_pct=-0.061
+      1 trend=bullish atr_ratio=0.93 obs=13 obs_fresh=13 fvgs=9 bos=25 sigs=0 wrong_side=5 price_out=0 bos_miss=0 risk_neg=0 liquidity_trap=8 near_gap_pct=0.003
+      1 trend=bullish atr_ratio=0.93 obs=12 obs_fresh=12 fvgs=9 bos=25 sigs=0 wrong_side=4 price_out=0 bos_miss=0 risk_neg=0 liquidity_trap=8 near_gap_pct=-0.093
+      1 trend=bullish atr_ratio=0.93 obs=12 obs_fresh=12 fvgs=9 bos=24 sigs=0 wrong_side=4 price_out=2 bos_miss=0 risk_neg=0 liquidity_trap=6 near_gap_pct=-0.02
+      1 trend=bullish atr_ratio=0.93 obs=11 obs_fresh=11 fvgs=9 bos=23 sigs=0 wrong_side=4 price_out=2 bos_miss=0 risk_neg=0 liquidity_trap=5 near_gap_pct=-0.051
+      1 trend=bullish atr_ratio=0.92 obs=12 obs_fresh=12 fvgs=9 bos=24 sigs=0 wrong_side=4 price_out=0 bos_miss=0 risk_neg=0 liquidity_trap=8 near_gap_pct=-0.088
 ```
 
 ## Errors
@@ -94,104 +95,104 @@ httpx.ConnectError: [Errno -2] Name or service not known
 
 ## Last 100 Log Lines
 ```
-[00:04:25] tick balance=$328.70
-  diag: trend=bullish atr_ratio=0.81 obs=9 obs_fresh=9 fvgs=13 bos=27 sigs=0 wrong_side=3 price_out=1 bos_miss=0 risk_neg=0 liquidity_trap=5 near_gap_pct=-0.055
-[00:05:27] tick balance=$328.70
-  diag: trend=bullish skip=atr_low ratio=0.78 min=0.8
-[00:06:28] tick balance=$328.70
-  diag: trend=bullish atr_ratio=0.81 obs=10 obs_fresh=10 fvgs=14 bos=26 sigs=0 wrong_side=3 price_out=1 bos_miss=0 risk_neg=0 liquidity_trap=6 near_gap_pct=-0.123
-[00:07:31] tick balance=$328.70
-  diag: trend=bullish atr_ratio=0.81 obs=10 obs_fresh=10 fvgs=14 bos=26 sigs=0 wrong_side=3 price_out=1 bos_miss=0 risk_neg=0 liquidity_trap=6 near_gap_pct=-0.149
-[00:08:32] tick balance=$328.70
-  diag: trend=bullish atr_ratio=0.81 obs=9 obs_fresh=9 fvgs=14 bos=26 sigs=0 wrong_side=3 price_out=1 bos_miss=0 risk_neg=0 liquidity_trap=5 near_gap_pct=-0.047
-[00:09:34] tick balance=$328.70
-  diag: trend=bullish atr_ratio=0.81 obs=9 obs_fresh=9 fvgs=14 bos=27 sigs=0 wrong_side=3 price_out=1 bos_miss=0 risk_neg=0 liquidity_trap=5 near_gap_pct=-0.061
-[00:10:36] tick balance=$328.70
-  diag: trend=bullish atr_ratio=0.8 obs=9 obs_fresh=9 fvgs=13 bos=27 sigs=0 wrong_side=3 price_out=1 bos_miss=0 risk_neg=0 liquidity_trap=5 near_gap_pct=-0.093
-[00:11:38] tick balance=$328.70
-  diag: trend=bullish atr_ratio=0.81 obs=9 obs_fresh=9 fvgs=13 bos=26 sigs=0 wrong_side=3 price_out=1 bos_miss=0 risk_neg=0 liquidity_trap=5 near_gap_pct=-0.089
-[00:12:40] tick balance=$328.70
-  diag: trend=bullish atr_ratio=0.81 obs=9 obs_fresh=9 fvgs=13 bos=27 sigs=0 wrong_side=3 price_out=2 bos_miss=0 risk_neg=0 liquidity_trap=4 near_gap_pct=-0.04
-[00:13:42] tick balance=$328.70
-  diag: trend=bullish atr_ratio=0.81 obs=9 obs_fresh=9 fvgs=13 bos=26 sigs=0 wrong_side=3 price_out=2 bos_miss=0 risk_neg=0 liquidity_trap=4 near_gap_pct=-0.001
-[00:14:44] tick balance=$328.70
-  diag: trend=bullish atr_ratio=0.82 obs=9 obs_fresh=9 fvgs=13 bos=26 sigs=0 wrong_side=3 price_out=3 bos_miss=0 risk_neg=0 liquidity_trap=3 near_gap_pct=-0.056
-[00:15:47] tick balance=$328.70
-  diag: trend=bullish atr_ratio=0.8 obs=8 obs_fresh=8 fvgs=13 bos=26 sigs=0 wrong_side=3 price_out=3 bos_miss=0 risk_neg=0 liquidity_trap=2 near_gap_pct=-0.095
-[00:16:49] tick balance=$328.70
-  diag: trend=bullish atr_ratio=0.81 obs=8 obs_fresh=8 fvgs=13 bos=26 sigs=0 wrong_side=3 price_out=3 bos_miss=0 risk_neg=0 liquidity_trap=2 near_gap_pct=-0.083
-[00:17:50] tick balance=$328.70
+[04:04:07] tick balance=$328.70
   diag: trend_htf=ranging trend_mid=ranging skip=trend_mismatch
-[00:18:52] tick balance=$328.70
+[04:05:08] tick balance=$328.70
   diag: trend_htf=ranging trend_mid=ranging skip=trend_mismatch
-[00:19:54] tick balance=$328.70
+[04:06:10] tick balance=$328.70
   diag: trend_htf=ranging trend_mid=ranging skip=trend_mismatch
-[00:20:56] tick balance=$328.70
+[04:07:12] tick balance=$328.70
   diag: trend_htf=ranging trend_mid=ranging skip=trend_mismatch
-[00:21:58] tick balance=$328.70
+[04:08:14] tick balance=$328.70
   diag: trend_htf=ranging trend_mid=ranging skip=trend_mismatch
-[00:23:00] tick balance=$328.70
+[04:09:17] tick balance=$328.70
   diag: trend_htf=ranging trend_mid=ranging skip=trend_mismatch
-[00:24:03] tick balance=$328.70
+[04:10:19] tick balance=$328.70
   diag: trend_htf=ranging trend_mid=ranging skip=trend_mismatch
-[00:25:05] tick balance=$328.70
+[04:11:20] tick balance=$328.70
   diag: trend_htf=ranging trend_mid=ranging skip=trend_mismatch
-[00:26:08] tick balance=$328.70
+[04:12:23] tick balance=$328.70
   diag: trend_htf=ranging trend_mid=ranging skip=trend_mismatch
-[00:27:09] tick balance=$328.70
-  diag: trend=bullish skip=atr_low ratio=0.78 min=0.8
-[00:28:11] tick balance=$328.70
-  diag: trend=bullish atr_ratio=0.81 obs=8 obs_fresh=8 fvgs=14 bos=26 sigs=0 wrong_side=3 price_out=1 bos_miss=0 risk_neg=0 liquidity_trap=4 near_gap_pct=-0.04
-[00:29:13] tick balance=$328.70
-  diag: trend=bullish atr_ratio=0.81 obs=8 obs_fresh=8 fvgs=14 bos=26 sigs=0 wrong_side=3 price_out=3 bos_miss=0 risk_neg=0 liquidity_trap=2 near_gap_pct=-0.102
-[00:30:15] tick balance=$328.70
-  diag: trend=bullish skip=atr_low ratio=0.71 min=0.8
-[00:31:16] tick balance=$328.70
-  diag: trend=bullish skip=atr_low ratio=0.72 min=0.8
-[00:32:18] tick balance=$328.70
-  diag: trend=bullish skip=atr_low ratio=0.73 min=0.8
-[00:33:20] tick balance=$328.70
+[04:13:25] tick balance=$328.70
   diag: trend_htf=ranging trend_mid=ranging skip=trend_mismatch
-[00:34:22] tick balance=$328.70
-  diag: trend=bullish skip=atr_low ratio=0.73 min=0.8
-[00:35:24] tick balance=$328.70
-  diag: trend=bullish skip=atr_low ratio=0.69 min=0.8
-[00:36:26] tick balance=$328.70
-  diag: trend=bullish skip=atr_low ratio=0.69 min=0.8
-[00:37:28] tick balance=$328.70
-  diag: trend=bullish skip=atr_low ratio=0.7 min=0.8
-[00:38:30] tick balance=$328.70
-  diag: trend=bullish skip=atr_low ratio=0.7 min=0.8
-[00:39:32] tick balance=$328.70
-  diag: trend=bullish skip=atr_low ratio=0.71 min=0.8
-[00:40:33] tick balance=$328.70
-  diag: trend=bullish skip=atr_low ratio=0.67 min=0.8
-[00:41:36] tick balance=$328.70
-  diag: trend=bullish skip=atr_low ratio=0.68 min=0.8
-[00:42:38] tick balance=$328.70
-  diag: trend=bullish skip=atr_low ratio=0.68 min=0.8
-[00:43:39] tick balance=$328.70
+[04:14:26] tick balance=$328.70
   diag: trend_htf=ranging trend_mid=ranging skip=trend_mismatch
-[00:44:41] tick balance=$328.70
-  diag: trend=bullish skip=atr_low ratio=0.69 min=0.8
-[00:45:42] tick balance=$328.70
-  diag: trend=bullish skip=atr_low ratio=0.67 min=0.8
-[00:46:43] tick balance=$328.70
-  diag: trend=bullish skip=atr_low ratio=0.68 min=0.8
-[00:47:45] tick balance=$328.70
-  diag: trend=bullish skip=atr_low ratio=0.69 min=0.8
-[00:48:47] tick balance=$328.70
-  diag: trend=bullish skip=atr_low ratio=0.69 min=0.8
-[00:49:49] tick balance=$328.70
-  diag: trend=bullish skip=atr_low ratio=0.69 min=0.8
-[00:50:51] tick balance=$328.70
-  diag: trend=bullish skip=atr_low ratio=0.69 min=0.8
-[00:51:53] tick balance=$328.70
-  diag: trend=bullish skip=atr_low ratio=0.7 min=0.8
-[00:52:55] tick balance=$328.70
-  diag: trend=bullish skip=atr_low ratio=0.7 min=0.8
-[00:53:57] tick balance=$328.70
+[04:15:28] tick balance=$328.70
   diag: trend_htf=ranging trend_mid=ranging skip=trend_mismatch
-[00:54:59] tick balance=$328.70
+[04:16:30] tick balance=$328.70
+  diag: trend_htf=ranging trend_mid=ranging skip=trend_mismatch
+[04:17:32] tick balance=$328.70
+  diag: trend_htf=ranging trend_mid=ranging skip=trend_mismatch
+[04:18:34] tick balance=$328.70
+  diag: trend_htf=ranging trend_mid=ranging skip=trend_mismatch
+[04:19:36] tick balance=$328.70
+  diag: trend_htf=ranging trend_mid=ranging skip=trend_mismatch
+[04:20:37] tick balance=$328.70
+  diag: trend_htf=ranging trend_mid=ranging skip=trend_mismatch
+[04:21:40] tick balance=$328.70
+  diag: trend_htf=ranging trend_mid=ranging skip=trend_mismatch
+[04:22:43] tick balance=$328.70
+  diag: trend_htf=ranging trend_mid=ranging skip=trend_mismatch
+[04:23:44] tick balance=$328.70
+  diag: trend_htf=ranging trend_mid=ranging skip=trend_mismatch
+[04:24:46] tick balance=$328.70
+  diag: trend_htf=ranging trend_mid=ranging skip=trend_mismatch
+[04:25:49] tick balance=$328.70
+  diag: trend_htf=ranging trend_mid=ranging skip=trend_mismatch
+[04:26:51] tick balance=$328.70
+  diag: trend_htf=ranging trend_mid=ranging skip=trend_mismatch
+[04:27:53] tick balance=$328.70
+  diag: trend_htf=ranging trend_mid=ranging skip=trend_mismatch
+[04:28:54] tick balance=$328.70
+  diag: trend_htf=ranging trend_mid=ranging skip=trend_mismatch
+[04:29:56] tick balance=$328.70
+  diag: trend_htf=ranging trend_mid=ranging skip=trend_mismatch
+[04:30:59] tick balance=$328.70
+  diag: trend_htf=ranging trend_mid=ranging skip=trend_mismatch
+[04:32:01] tick balance=$328.70
+  diag: trend_htf=ranging trend_mid=ranging skip=trend_mismatch
+[04:33:02] tick balance=$328.70
+  diag: trend_htf=ranging trend_mid=ranging skip=trend_mismatch
+[04:34:04] tick balance=$328.70
+  diag: trend_htf=ranging trend_mid=ranging skip=trend_mismatch
+[04:35:06] tick balance=$328.70
+  diag: trend_htf=ranging trend_mid=ranging skip=trend_mismatch
+[04:36:08] tick balance=$328.70
+  diag: trend_htf=ranging trend_mid=ranging skip=trend_mismatch
+[04:37:10] tick balance=$328.70
+  diag: trend_htf=ranging trend_mid=ranging skip=trend_mismatch
+[04:38:11] tick balance=$328.70
+  diag: trend_htf=ranging trend_mid=ranging skip=trend_mismatch
+[04:39:13] tick balance=$328.70
+  diag: trend_htf=ranging trend_mid=ranging skip=trend_mismatch
+[04:40:15] tick balance=$328.70
+  diag: trend_htf=ranging trend_mid=ranging skip=trend_mismatch
+[04:41:17] tick balance=$328.70
+  diag: trend_htf=ranging trend_mid=ranging skip=trend_mismatch
+[04:42:19] tick balance=$328.70
+  diag: trend_htf=ranging trend_mid=ranging skip=trend_mismatch
+[04:43:21] tick balance=$328.70
+  diag: trend_htf=ranging trend_mid=ranging skip=trend_mismatch
+[04:44:23] tick balance=$328.70
+  diag: trend_htf=ranging trend_mid=ranging skip=trend_mismatch
+[04:45:25] tick balance=$328.70
+  diag: trend_htf=ranging trend_mid=ranging skip=trend_mismatch
+[04:46:27] tick balance=$328.70
+  diag: trend_htf=ranging trend_mid=ranging skip=trend_mismatch
+[04:47:28] tick balance=$328.70
+  diag: trend_htf=ranging trend_mid=ranging skip=trend_mismatch
+[04:48:31] tick balance=$328.70
+  diag: trend_htf=ranging trend_mid=ranging skip=trend_mismatch
+[04:49:34] tick balance=$328.70
+  diag: trend_htf=ranging trend_mid=ranging skip=trend_mismatch
+[04:50:36] tick balance=$328.70
+  diag: trend_htf=ranging trend_mid=ranging skip=trend_mismatch
+[04:51:37] tick balance=$328.70
+  diag: trend_htf=ranging trend_mid=ranging skip=trend_mismatch
+[04:52:39] tick balance=$328.70
+  diag: trend_htf=ranging trend_mid=ranging skip=trend_mismatch
+[04:53:41] tick balance=$328.70
+  diag: trend_htf=ranging trend_mid=ranging skip=trend_mismatch
+[04:54:43] tick balance=$328.70
   diag: trend_htf=ranging trend_mid=ranging skip=trend_mismatch
 ```
