@@ -1,4 +1,4 @@
-# Bot Snapshot — 2026-04-21 18:55 UTC
+# Bot Snapshot — 2026-04-21 22:55 UTC
 
 ## Service: active
 balance=$301.06
@@ -50,152 +50,130 @@ none
 
 ## Diag Summary (last ~4h)
 ```
-     29 trend=bearish skip=ema_overextended price=39.6 ema20_h4=41.6 dist=2.0 max_dist=1.4
-     25 trend=bearish skip=ema_overextended price=39.9 ema20_h4=41.6 dist=1.7 max_dist=1.4
-     21 trend=bearish skip=ema_overextended price=39.8 ema20_h4=41.6 dist=1.8 max_dist=1.4
-     17 trend=bearish skip=ema_overextended price=40.0 ema20_h4=41.8 dist=1.8 max_dist=1.5
-     17 trend=bearish skip=ema_overextended price=39.7 ema20_h4=41.6 dist=1.9 max_dist=1.4
-     16 trend=bearish skip=ema_overextended price=40.1 ema20_h4=41.8 dist=1.7 max_dist=1.4
-     15 trend=bearish skip=ema_overextended price=40.0 ema20_h4=41.6 dist=1.6 max_dist=1.4
-     12 trend=bearish skip=ema_overextended price=39.5 ema20_h4=41.6 dist=2.1 max_dist=1.5
-     10 trend=bearish skip=ema_overextended price=39.5 ema20_h4=41.6 dist=2.1 max_dist=1.4
-     10 trend=bearish skip=ema_overextended price=39.4 ema20_h4=41.6 dist=2.2 max_dist=1.5
-      7 trend=bearish skip=ema_overextended price=40.0 ema20_h4=41.8 dist=1.8 max_dist=1.4
-      7 trend=bearish skip=ema_overextended price=39.4 ema20_h4=41.6 dist=2.1 max_dist=1.5
-      5 trend=bearish skip=ema_overextended price=40.4 ema20_h4=41.8 dist=1.4 max_dist=1.4
-      5 trend=bearish skip=ema_overextended price=39.9 ema20_h4=41.8 dist=1.9 max_dist=1.4
-      5 trend=bearish skip=ema_overextended price=39.5 ema20_h4=41.6 dist=2.0 max_dist=1.4
-      4 trend=bearish skip=ema_overextended price=40.2 ema20_h4=41.8 dist=1.6 max_dist=1.4
-      4 trend=bearish skip=ema_overextended price=40.0 ema20_h4=41.6 dist=1.7 max_dist=1.4
-      4 trend=bearish skip=ema_overextended price=39.9 ema20_h4=41.8 dist=1.9 max_dist=1.5
-      4 trend=bearish skip=ema_overextended price=39.1 ema20_h4=41.5 dist=2.4 max_dist=1.5
-      3 trend=bearish skip=ema_overextended price=40.3 ema20_h4=41.8 dist=1.6 max_dist=1.4
+     43 trend=bearish skip=ema_overextended price=39.3 ema20_h4=41.3 dist=2.0 max_dist=1.5
+     33 trend=bearish skip=ema_overextended price=39.5 ema20_h4=41.3 dist=1.8 max_dist=1.5
+     24 trend=bearish skip=ema_overextended price=39.4 ema20_h4=41.3 dist=1.9 max_dist=1.5
+     17 trend=bearish skip=ema_overextended price=39.5 ema20_h4=41.3 dist=1.9 max_dist=1.5
+     16 trend=bearish skip=ema_overextended price=39.2 ema20_h4=41.3 dist=2.1 max_dist=1.5
+      9 trend=bearish skip=ema_overextended price=39.6 ema20_h4=41.3 dist=1.7 max_dist=1.5
+      8 trend=bearish skip=ema_overextended price=39.0 ema20_h4=41.3 dist=2.3 max_dist=1.4
+      6 trend=bearish skip=ema_overextended price=39.7 ema20_h4=41.3 dist=1.7 max_dist=1.5
+      6 trend=bearish skip=ema_overextended price=39.0 ema20_h4=41.5 dist=2.5 max_dist=1.5
+      6 trend=bearish skip=ema_overextended price=38.9 ema20_h4=41.5 dist=2.6 max_dist=1.5
+      4 trend=bearish skip=ema_overextended price=39.4 ema20_h4=41.3 dist=2.0 max_dist=1.5
+      4 trend=bearish skip=ema_overextended price=39.0 ema20_h4=41.5 dist=2.6 max_dist=1.5
+      3 trend=bearish skip=ema_overextended price=39.6 ema20_h4=41.3 dist=1.8 max_dist=1.5
+      3 trend=bearish skip=ema_overextended price=39.3 ema20_h4=41.3 dist=2.1 max_dist=1.5
+      1 trend=bearish skip=ema_overextended price=39.1 ema20_h4=41.3 dist=2.2 max_dist=1.5
+      1 trend=bearish skip=ema_overextended price=39.1 ema20_h4=41.3 dist=2.2 max_dist=1.4
+      1 trend=bearish skip=ema_overextended price=38.9 ema20_h4=41.3 dist=2.4 max_dist=1.4
 ```
 
 ## Errors
 ```
-  File "/root/smc-bot/venv/lib/python3.11/site-packages/httpx/_transports/default.py", line 101, in map_httpcore_exceptions
-    with map_exceptions(exc_map):
-    self.gen.throw(typ, value, traceback)
-  File "/root/smc-bot/venv/lib/python3.11/site-packages/httpcore/_exceptions.py", line 14, in map_exceptions
-The above exception was the direct cause of the following exception:
-Traceback (most recent call last):
-    with map_httpcore_exceptions():
-    self.gen.throw(typ, value, traceback)
-  File "/root/smc-bot/venv/lib/python3.11/site-packages/httpx/_transports/default.py", line 118, in map_httpcore_exceptions
-[ERROR] 
-Traceback (most recent call last):
-  File "/root/smc-bot/venv/lib/python3.11/site-packages/httpx/_transports/default.py", line 101, in map_httpcore_exceptions
-    with map_exceptions(exc_map):
-    self.gen.throw(typ, value, traceback)
-  File "/root/smc-bot/venv/lib/python3.11/site-packages/httpcore/_exceptions.py", line 14, in map_exceptions
-The above exception was the direct cause of the following exception:
-Traceback (most recent call last):
-    with map_httpcore_exceptions():
-    self.gen.throw(typ, value, traceback)
-  File "/root/smc-bot/venv/lib/python3.11/site-packages/httpx/_transports/default.py", line 118, in map_httpcore_exceptions
+none
 ```
 
 ## Last 100 Log Lines
 ```
-[20:04:06] tick balance=$301.06
-  diag: trend=bearish skip=ema_overextended price=39.6 ema20_h4=41.6 dist=2.0 max_dist=1.4
-[20:05:08] tick balance=$301.06
-  diag: trend=bearish skip=ema_overextended price=39.6 ema20_h4=41.6 dist=2.0 max_dist=1.4
-[20:06:09] tick balance=$301.06
-  diag: trend=bearish skip=ema_overextended price=39.6 ema20_h4=41.6 dist=2.0 max_dist=1.4
-[20:07:12] tick balance=$301.06
-  diag: trend=bearish skip=ema_overextended price=39.6 ema20_h4=41.6 dist=2.0 max_dist=1.4
-[20:08:14] tick balance=$301.06
-  diag: trend=bearish skip=ema_overextended price=39.5 ema20_h4=41.6 dist=2.0 max_dist=1.4
-[20:09:16] tick balance=$301.06
-  diag: trend=bearish skip=ema_overextended price=39.6 ema20_h4=41.6 dist=2.0 max_dist=1.4
-[20:10:18] tick balance=$301.06
-  diag: trend=bearish skip=ema_overextended price=39.5 ema20_h4=41.6 dist=2.0 max_dist=1.4
-[20:11:20] tick balance=$301.06
-  diag: trend=bearish skip=ema_overextended price=39.5 ema20_h4=41.6 dist=2.0 max_dist=1.4
-[20:12:22] tick balance=$301.06
-  diag: trend=bearish skip=ema_overextended price=39.6 ema20_h4=41.6 dist=2.0 max_dist=1.4
-[20:13:23] tick balance=$301.06
-  diag: trend=bearish skip=ema_overextended price=39.5 ema20_h4=41.6 dist=2.1 max_dist=1.4
-[20:14:25] tick balance=$301.06
-  diag: trend=bearish skip=ema_overextended price=39.5 ema20_h4=41.6 dist=2.1 max_dist=1.4
-[20:15:27] tick balance=$301.06
-  diag: trend=bearish skip=ema_overextended price=39.5 ema20_h4=41.6 dist=2.1 max_dist=1.4
-[20:16:29] tick balance=$301.06
-  diag: trend=bearish skip=ema_overextended price=39.5 ema20_h4=41.6 dist=2.1 max_dist=1.4
-[20:17:32] tick balance=$301.06
-  diag: trend=bearish skip=ema_overextended price=39.4 ema20_h4=41.6 dist=2.2 max_dist=1.5
-[20:18:34] tick balance=$301.06
-  diag: trend=bearish skip=ema_overextended price=39.5 ema20_h4=41.6 dist=2.1 max_dist=1.5
-[20:19:36] tick balance=$301.06
-  diag: trend=bearish skip=ema_overextended price=39.4 ema20_h4=41.6 dist=2.1 max_dist=1.5
-[20:20:38] tick balance=$301.06
-  diag: trend=bearish skip=ema_overextended price=39.4 ema20_h4=41.6 dist=2.1 max_dist=1.5
-[20:21:40] tick balance=$301.06
-  diag: trend=bearish skip=ema_overextended price=39.5 ema20_h4=41.6 dist=2.1 max_dist=1.5
-[20:22:42] tick balance=$301.06
-  diag: trend=bearish skip=ema_overextended price=39.5 ema20_h4=41.6 dist=2.1 max_dist=1.5
-[20:23:44] tick balance=$301.06
-  diag: trend=bearish skip=ema_overextended price=39.5 ema20_h4=41.6 dist=2.1 max_dist=1.5
-[20:24:45] tick balance=$301.06
-  diag: trend=bearish skip=ema_overextended price=39.5 ema20_h4=41.6 dist=2.1 max_dist=1.5
-[20:25:47] tick balance=$301.06
-  diag: trend=bearish skip=ema_overextended price=39.5 ema20_h4=41.6 dist=2.1 max_dist=1.5
-[20:26:49] tick balance=$301.06
-  diag: trend=bearish skip=ema_overextended price=39.5 ema20_h4=41.6 dist=2.1 max_dist=1.5
-[20:27:51] tick balance=$301.06
-  diag: trend=bearish skip=ema_overextended price=39.5 ema20_h4=41.6 dist=2.1 max_dist=1.5
-[20:28:53] tick balance=$301.06
-  diag: trend=bearish skip=ema_overextended price=39.4 ema20_h4=41.6 dist=2.2 max_dist=1.5
-[20:29:56] tick balance=$301.06
-  diag: trend=bearish skip=ema_overextended price=39.4 ema20_h4=41.6 dist=2.2 max_dist=1.5
-[20:30:57] tick balance=$301.06
-  diag: trend=bearish skip=ema_overextended price=39.4 ema20_h4=41.6 dist=2.1 max_dist=1.5
-[20:32:00] tick balance=$301.06
-  diag: trend=bearish skip=ema_overextended price=39.4 ema20_h4=41.6 dist=2.2 max_dist=1.5
-[20:33:02] tick balance=$301.06
-  diag: trend=bearish skip=ema_overextended price=39.4 ema20_h4=41.6 dist=2.1 max_dist=1.5
-[20:34:04] tick balance=$301.06
-  diag: trend=bearish skip=ema_overextended price=39.4 ema20_h4=41.6 dist=2.2 max_dist=1.5
-[20:35:05] tick balance=$301.06
-  diag: trend=bearish skip=ema_overextended price=39.5 ema20_h4=41.6 dist=2.1 max_dist=1.5
-[20:36:07] tick balance=$301.06
-  diag: trend=bearish skip=ema_overextended price=39.5 ema20_h4=41.6 dist=2.1 max_dist=1.5
-[20:37:09] tick balance=$301.06
-  diag: trend=bearish skip=ema_overextended price=39.5 ema20_h4=41.6 dist=2.1 max_dist=1.5
-[20:38:11] tick balance=$301.06
-  diag: trend=bearish skip=ema_overextended price=39.5 ema20_h4=41.6 dist=2.1 max_dist=1.5
-[20:39:13] tick balance=$301.06
-  diag: trend=bearish skip=ema_overextended price=39.4 ema20_h4=41.6 dist=2.1 max_dist=1.5
-[20:40:15] tick balance=$301.06
-  diag: trend=bearish skip=ema_overextended price=39.4 ema20_h4=41.6 dist=2.1 max_dist=1.5
-[20:41:17] tick balance=$301.06
-  diag: trend=bearish skip=ema_overextended price=39.4 ema20_h4=41.6 dist=2.2 max_dist=1.5
-[20:42:18] tick balance=$301.06
-  diag: trend=bearish skip=ema_overextended price=39.4 ema20_h4=41.6 dist=2.2 max_dist=1.5
-[20:43:20] tick balance=$301.06
-  diag: trend=bearish skip=ema_overextended price=39.4 ema20_h4=41.6 dist=2.2 max_dist=1.5
-[20:44:25] tick balance=$301.06
-  diag: trend=bearish skip=ema_overextended price=39.4 ema20_h4=41.6 dist=2.2 max_dist=1.5
-[20:45:27] tick balance=$301.06
-  diag: trend=bearish skip=ema_overextended price=39.4 ema20_h4=41.6 dist=2.2 max_dist=1.5
-[20:46:29] tick balance=$301.06
-  diag: trend=bearish skip=ema_overextended price=39.4 ema20_h4=41.6 dist=2.1 max_dist=1.5
-[20:47:33] tick balance=$301.06
-  diag: trend=bearish skip=ema_overextended price=39.3 ema20_h4=41.6 dist=2.2 max_dist=1.5
-[20:48:40] tick balance=$301.06
-  diag: trend=bearish skip=ema_overextended price=39.2 ema20_h4=41.6 dist=2.3 max_dist=1.5
-[20:49:41] tick balance=$301.06
-  diag: trend=bearish skip=ema_overextended price=39.2 ema20_h4=41.5 dist=2.4 max_dist=1.5
-[20:50:43] tick balance=$301.06
-  diag: trend=bearish skip=ema_overextended price=39.1 ema20_h4=41.5 dist=2.4 max_dist=1.5
-[20:51:45] tick balance=$301.06
-  diag: trend=bearish skip=ema_overextended price=39.1 ema20_h4=41.5 dist=2.4 max_dist=1.5
-[20:52:47] tick balance=$301.06
-  diag: trend=bearish skip=ema_overextended price=39.1 ema20_h4=41.5 dist=2.4 max_dist=1.5
-[20:53:49] tick balance=$301.06
-  diag: trend=bearish skip=ema_overextended price=39.1 ema20_h4=41.5 dist=2.5 max_dist=1.5
-[20:54:51] tick balance=$301.06
-  diag: trend=bearish skip=ema_overextended price=39.1 ema20_h4=41.5 dist=2.4 max_dist=1.5
+[00:05:26] tick balance=$301.06
+  diag: trend=bearish skip=ema_overextended price=39.4 ema20_h4=41.3 dist=1.9 max_dist=1.5
+[00:06:28] tick balance=$301.06
+  diag: trend=bearish skip=ema_overextended price=39.4 ema20_h4=41.3 dist=1.9 max_dist=1.5
+[00:07:30] tick balance=$301.06
+  diag: trend=bearish skip=ema_overextended price=39.5 ema20_h4=41.3 dist=1.9 max_dist=1.5
+[00:08:33] tick balance=$301.06
+  diag: trend=bearish skip=ema_overextended price=39.4 ema20_h4=41.3 dist=1.9 max_dist=1.5
+[00:09:35] tick balance=$301.06
+  diag: trend=bearish skip=ema_overextended price=39.5 ema20_h4=41.3 dist=1.8 max_dist=1.5
+[TG poll] err: 
+[00:10:37] tick balance=$301.06
+  diag: trend=bearish skip=ema_overextended price=39.5 ema20_h4=41.3 dist=1.9 max_dist=1.5
+[00:11:40] tick balance=$301.06
+  diag: trend=bearish skip=ema_overextended price=39.5 ema20_h4=41.3 dist=1.8 max_dist=1.5
+[00:12:42] tick balance=$301.06
+  diag: trend=bearish skip=ema_overextended price=39.5 ema20_h4=41.3 dist=1.8 max_dist=1.5
+[TG poll] err: 
+[00:13:45] tick balance=$301.06
+  diag: trend=bearish skip=ema_overextended price=39.5 ema20_h4=41.3 dist=1.8 max_dist=1.5
+[00:14:47] tick balance=$301.06
+  diag: trend=bearish skip=ema_overextended price=39.5 ema20_h4=41.3 dist=1.8 max_dist=1.5
+[00:15:50] tick balance=$301.06
+  diag: trend=bearish skip=ema_overextended price=39.5 ema20_h4=41.3 dist=1.8 max_dist=1.5
+[00:16:52] tick balance=$301.06
+  diag: trend=bearish skip=ema_overextended price=39.6 ema20_h4=41.3 dist=1.8 max_dist=1.5
+[00:17:55] tick balance=$301.06
+  diag: trend=bearish skip=ema_overextended price=39.5 ema20_h4=41.3 dist=1.8 max_dist=1.5
+[00:18:58] tick balance=$301.06
+  diag: trend=bearish skip=ema_overextended price=39.5 ema20_h4=41.3 dist=1.9 max_dist=1.5
+[00:20:00] tick balance=$301.06
+  diag: trend=bearish skip=ema_overextended price=39.4 ema20_h4=41.3 dist=1.9 max_dist=1.5
+[00:21:02] tick balance=$301.06
+  diag: trend=bearish skip=ema_overextended price=39.5 ema20_h4=41.3 dist=1.9 max_dist=1.5
+[00:22:04] tick balance=$301.06
+  diag: trend=bearish skip=ema_overextended price=39.5 ema20_h4=41.3 dist=1.9 max_dist=1.5
+[00:23:06] tick balance=$301.06
+  diag: trend=bearish skip=ema_overextended price=39.4 ema20_h4=41.3 dist=2.0 max_dist=1.5
+[00:24:08] tick balance=$301.06
+  diag: trend=bearish skip=ema_overextended price=39.4 ema20_h4=41.3 dist=1.9 max_dist=1.5
+[00:25:10] tick balance=$301.06
+  diag: trend=bearish skip=ema_overextended price=39.5 ema20_h4=41.3 dist=1.9 max_dist=1.5
+[00:26:12] tick balance=$301.06
+  diag: trend=bearish skip=ema_overextended price=39.5 ema20_h4=41.3 dist=1.8 max_dist=1.5
+[00:27:14] tick balance=$301.06
+  diag: trend=bearish skip=ema_overextended price=39.5 ema20_h4=41.3 dist=1.9 max_dist=1.5
+[00:28:16] tick balance=$301.06
+  diag: trend=bearish skip=ema_overextended price=39.5 ema20_h4=41.3 dist=1.9 max_dist=1.5
+[00:29:18] tick balance=$301.06
+  diag: trend=bearish skip=ema_overextended price=39.5 ema20_h4=41.3 dist=1.8 max_dist=1.5
+[00:30:20] tick balance=$301.06
+  diag: trend=bearish skip=ema_overextended price=39.5 ema20_h4=41.3 dist=1.8 max_dist=1.5
+[00:31:22] tick balance=$301.06
+  diag: trend=bearish skip=ema_overextended price=39.5 ema20_h4=41.3 dist=1.8 max_dist=1.5
+[00:32:24] tick balance=$301.06
+  diag: trend=bearish skip=ema_overextended price=39.5 ema20_h4=41.3 dist=1.8 max_dist=1.5
+[00:33:26] tick balance=$301.06
+  diag: trend=bearish skip=ema_overextended price=39.5 ema20_h4=41.3 dist=1.9 max_dist=1.5
+[00:34:29] tick balance=$301.06
+  diag: trend=bearish skip=ema_overextended price=39.4 ema20_h4=41.3 dist=1.9 max_dist=1.5
+[00:35:31] tick balance=$301.06
+  diag: trend=bearish skip=ema_overextended price=39.4 ema20_h4=41.3 dist=1.9 max_dist=1.5
+[00:36:33] tick balance=$301.06
+  diag: trend=bearish skip=ema_overextended price=39.5 ema20_h4=41.3 dist=1.9 max_dist=1.5
+[TG poll] err: 
+[00:37:36] tick balance=$301.06
+  diag: trend=bearish skip=ema_overextended price=39.5 ema20_h4=41.3 dist=1.8 max_dist=1.5
+[00:38:38] tick balance=$301.06
+  diag: trend=bearish skip=ema_overextended price=39.5 ema20_h4=41.3 dist=1.8 max_dist=1.5
+[00:39:41] tick balance=$301.06
+  diag: trend=bearish skip=ema_overextended price=39.5 ema20_h4=41.3 dist=1.8 max_dist=1.5
+[00:40:43] tick balance=$301.06
+  diag: trend=bearish skip=ema_overextended price=39.5 ema20_h4=41.3 dist=1.8 max_dist=1.5
+[00:41:45] tick balance=$301.06
+  diag: trend=bearish skip=ema_overextended price=39.5 ema20_h4=41.3 dist=1.8 max_dist=1.5
+[00:42:47] tick balance=$301.06
+  diag: trend=bearish skip=ema_overextended price=39.5 ema20_h4=41.3 dist=1.8 max_dist=1.5
+[TG poll] err: 
+[00:43:49] tick balance=$301.06
+  diag: trend=bearish skip=ema_overextended price=39.6 ema20_h4=41.3 dist=1.8 max_dist=1.5
+[00:44:52] tick balance=$301.06
+  diag: trend=bearish skip=ema_overextended price=39.6 ema20_h4=41.3 dist=1.8 max_dist=1.5
+[00:45:54] tick balance=$301.06
+  diag: trend=bearish skip=ema_overextended price=39.5 ema20_h4=41.3 dist=1.8 max_dist=1.5
+[00:46:56] tick balance=$301.06
+  diag: trend=bearish skip=ema_overextended price=39.5 ema20_h4=41.3 dist=1.8 max_dist=1.5
+[00:47:59] tick balance=$301.06
+  diag: trend=bearish skip=ema_overextended price=39.5 ema20_h4=41.3 dist=1.8 max_dist=1.5
+[00:49:01] tick balance=$301.06
+  diag: trend=bearish skip=ema_overextended price=39.5 ema20_h4=41.3 dist=1.8 max_dist=1.5
+[00:50:04] tick balance=$301.06
+  diag: trend=bearish skip=ema_overextended price=39.5 ema20_h4=41.3 dist=1.8 max_dist=1.5
+[00:51:06] tick balance=$301.06
+  diag: trend=bearish skip=ema_overextended price=39.5 ema20_h4=41.3 dist=1.8 max_dist=1.5
+[00:52:08] tick balance=$301.06
+  diag: trend=bearish skip=ema_overextended price=39.5 ema20_h4=41.3 dist=1.9 max_dist=1.5
+[00:53:11] tick balance=$301.06
+  diag: trend=bearish skip=ema_overextended price=39.5 ema20_h4=41.3 dist=1.9 max_dist=1.5
+[00:54:13] tick balance=$301.06
+  diag: trend=bearish skip=ema_overextended price=39.5 ema20_h4=41.3 dist=1.8 max_dist=1.5
 ```
