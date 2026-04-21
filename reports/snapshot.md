@@ -1,4 +1,4 @@
-# Bot Snapshot — 2026-04-20 22:55 UTC
+# Bot Snapshot — 2026-04-21 02:55 UTC
 
 ## Service: active
 balance=$296.96
@@ -34,13 +34,13 @@ ADX_MIN: float = 20.0 # ADX < 20 → choppy market, skip entry
 
 ## Daily PnL
 ```
+2026-04-21|296.96|0.0|0
 2026-04-20|312.71|-15.75|0
 2026-04-19|354.45|-41.74|0
 2026-04-18|311.88|42.12|0
 2026-04-17|328.7|-16.81|0
 2026-04-16|381.29|-52.59|0
 2026-04-15|363.1|17.9|0
-2026-04-14|413.74|-50.64|0
 ```
 
 ## Open Positions
@@ -50,19 +50,10 @@ none
 
 ## Diag Summary (last ~4h)
 ```
-    181 trend_htf=ranging trend_mid=ranging skip=trend_mismatch
-     13 trend=bullish skip=adx_low adx=12.3 min=20.0
-     11 trend=bullish skip=adx_low adx=11.7 min=20.0
-     10 trend=bullish skip=adx_low adx=11.8 min=20.0
-      9 trend=bullish skip=adx_low adx=10.0 min=20.0
-      4 trend=bullish skip=adx_low adx=11.9 min=20.0
-      3 trend=bullish skip=adx_low adx=11.6 min=20.0
-      2 trend=bullish skip=adx_low adx=12.4 min=20.0
-      2 trend=bullish skip=adx_low adx=11.1 min=20.0
-      2 trend=bullish skip=adx_low adx=10.6 min=20.0
-      1 trend=bullish skip=adx_low adx=10.5 min=20.0
-      1 trend=bearish skip=trend_immature trend_age_s=62 need_s=900
-      1 trend=bearish skip=trend_immature trend_age_s=0 need_s=900
+    199 trend_htf=ranging trend_mid=ranging skip=trend_mismatch
+     21 trend=bearish skip=ema_overextended price=40.8 ema20_h4=42.2 dist=1.4 max_dist=1.4
+     18 trend=bearish skip=ema_overextended price=40.7 ema20_h4=42.2 dist=1.5 max_dist=1.4
+      2 trend=bearish skip=ema_overextended price=40.7 ema20_h4=42.2 dist=1.4 max_dist=1.4
 ```
 
 ## Errors
@@ -91,104 +82,104 @@ Traceback (most recent call last):
 
 ## Last 100 Log Lines
 ```
-[00:03:33] tick balance=$296.96
+[04:03:58] tick balance=$296.96
+  diag: trend=bearish skip=ema_overextended price=40.7 ema20_h4=42.2 dist=1.5 max_dist=1.4
+[04:05:00] tick balance=$296.96
+  diag: trend=bearish skip=ema_overextended price=40.7 ema20_h4=42.2 dist=1.5 max_dist=1.4
+[04:06:02] tick balance=$296.96
+  diag: trend=bearish skip=ema_overextended price=40.7 ema20_h4=42.2 dist=1.5 max_dist=1.4
+[04:07:04] tick balance=$296.96
+  diag: trend=bearish skip=ema_overextended price=40.7 ema20_h4=42.2 dist=1.4 max_dist=1.4
+[04:08:07] tick balance=$296.96
+  diag: trend=bearish skip=ema_overextended price=40.7 ema20_h4=42.2 dist=1.5 max_dist=1.4
+[04:09:08] tick balance=$296.96
+  diag: trend=bearish skip=ema_overextended price=40.7 ema20_h4=42.2 dist=1.5 max_dist=1.4
+[04:10:10] tick balance=$296.96
+  diag: trend=bearish skip=ema_overextended price=40.7 ema20_h4=42.2 dist=1.5 max_dist=1.4
+[04:11:12] tick balance=$296.96
+  diag: trend=bearish skip=ema_overextended price=40.7 ema20_h4=42.2 dist=1.5 max_dist=1.4
+[04:12:15] tick balance=$296.96
+  diag: trend=bearish skip=ema_overextended price=40.7 ema20_h4=42.2 dist=1.5 max_dist=1.4
+[04:13:17] tick balance=$296.96
+  diag: trend=bearish skip=ema_overextended price=40.7 ema20_h4=42.2 dist=1.5 max_dist=1.4
+[04:14:19] tick balance=$296.96
+  diag: trend=bearish skip=ema_overextended price=40.7 ema20_h4=42.2 dist=1.5 max_dist=1.4
+[04:15:22] tick balance=$296.96
+  diag: trend=bearish skip=ema_overextended price=40.7 ema20_h4=42.2 dist=1.5 max_dist=1.4
+[04:16:23] tick balance=$296.96
+  diag: trend=bearish skip=ema_overextended price=40.7 ema20_h4=42.2 dist=1.5 max_dist=1.4
+[04:17:25] tick balance=$296.96
+  diag: trend=bearish skip=ema_overextended price=40.7 ema20_h4=42.2 dist=1.5 max_dist=1.4
+[04:18:27] tick balance=$296.96
+  diag: trend=bearish skip=ema_overextended price=40.8 ema20_h4=42.2 dist=1.4 max_dist=1.4
+[04:19:29] tick balance=$296.96
+  diag: trend=bearish skip=ema_overextended price=40.8 ema20_h4=42.2 dist=1.4 max_dist=1.4
+[04:20:32] tick balance=$296.96
+  diag: trend=bearish skip=ema_overextended price=40.7 ema20_h4=42.2 dist=1.5 max_dist=1.4
+[04:21:34] tick balance=$296.96
+  diag: trend=bearish skip=ema_overextended price=40.8 ema20_h4=42.2 dist=1.4 max_dist=1.4
+[04:22:36] tick balance=$296.96
+  diag: trend=bearish skip=ema_overextended price=40.8 ema20_h4=42.2 dist=1.4 max_dist=1.4
+[04:23:38] tick balance=$296.96
+  diag: trend=bearish skip=ema_overextended price=40.7 ema20_h4=42.2 dist=1.4 max_dist=1.4
+[04:24:41] tick balance=$296.96
+  diag: trend=bearish skip=ema_overextended price=40.7 ema20_h4=42.2 dist=1.5 max_dist=1.4
+[04:25:43] tick balance=$296.96
+  diag: trend=bearish skip=ema_overextended price=40.7 ema20_h4=42.2 dist=1.5 max_dist=1.4
+[04:26:45] tick balance=$296.96
+  diag: trend=bearish skip=ema_overextended price=40.7 ema20_h4=42.2 dist=1.5 max_dist=1.4
+[04:27:47] tick balance=$296.96
+  diag: trend=bearish skip=ema_overextended price=40.8 ema20_h4=42.2 dist=1.4 max_dist=1.4
+[04:28:49] tick balance=$296.96
   diag: trend_htf=ranging trend_mid=ranging skip=trend_mismatch
-[00:04:35] tick balance=$296.96
+[04:29:51] tick balance=$296.96
+  diag: trend=bearish skip=ema_overextended price=40.8 ema20_h4=42.2 dist=1.4 max_dist=1.4
+[04:30:53] tick balance=$296.96
+  diag: trend=bearish skip=ema_overextended price=40.8 ema20_h4=42.2 dist=1.4 max_dist=1.4
+[04:31:55] tick balance=$296.96
   diag: trend_htf=ranging trend_mid=ranging skip=trend_mismatch
-[00:05:38] tick balance=$296.96
+[04:32:57] tick balance=$296.96
   diag: trend_htf=ranging trend_mid=ranging skip=trend_mismatch
-[00:06:40] tick balance=$296.96
+[04:33:59] tick balance=$296.96
   diag: trend_htf=ranging trend_mid=ranging skip=trend_mismatch
-[00:07:43] tick balance=$296.96
+[04:35:01] tick balance=$296.96
+  diag: trend=bearish skip=ema_overextended price=40.8 ema20_h4=42.2 dist=1.4 max_dist=1.4
+[04:36:04] tick balance=$296.96
+  diag: trend=bearish skip=ema_overextended price=40.8 ema20_h4=42.2 dist=1.4 max_dist=1.4
+[04:37:07] tick balance=$296.96
   diag: trend_htf=ranging trend_mid=ranging skip=trend_mismatch
-[00:08:45] tick balance=$296.96
+[04:38:09] tick balance=$296.96
+  diag: trend=bearish skip=ema_overextended price=40.8 ema20_h4=42.2 dist=1.4 max_dist=1.4
+[04:39:10] tick balance=$296.96
+  diag: trend=bearish skip=ema_overextended price=40.8 ema20_h4=42.2 dist=1.4 max_dist=1.4
+[04:40:12] tick balance=$296.96
+  diag: trend=bearish skip=ema_overextended price=40.8 ema20_h4=42.2 dist=1.4 max_dist=1.4
+[04:41:15] tick balance=$296.96
+  diag: trend=bearish skip=ema_overextended price=40.8 ema20_h4=42.2 dist=1.4 max_dist=1.4
+[04:42:17] tick balance=$296.96
+  diag: trend=bearish skip=ema_overextended price=40.8 ema20_h4=42.2 dist=1.4 max_dist=1.4
+[04:43:19] tick balance=$296.96
+  diag: trend=bearish skip=ema_overextended price=40.8 ema20_h4=42.2 dist=1.4 max_dist=1.4
+[04:44:21] tick balance=$296.96
   diag: trend_htf=ranging trend_mid=ranging skip=trend_mismatch
-[00:09:48] tick balance=$296.96
+[04:45:24] tick balance=$296.96
+  diag: trend=bearish skip=ema_overextended price=40.8 ema20_h4=42.2 dist=1.4 max_dist=1.4
+[04:46:26] tick balance=$296.96
+  diag: trend=bearish skip=ema_overextended price=40.8 ema20_h4=42.2 dist=1.4 max_dist=1.4
+[04:47:29] tick balance=$296.96
   diag: trend_htf=ranging trend_mid=ranging skip=trend_mismatch
-[00:10:50] tick balance=$296.96
+[04:48:31] tick balance=$296.96
   diag: trend_htf=ranging trend_mid=ranging skip=trend_mismatch
-[00:11:52] tick balance=$296.96
+[04:49:33] tick balance=$296.96
   diag: trend_htf=ranging trend_mid=ranging skip=trend_mismatch
-[00:12:55] tick balance=$296.96
+[04:50:35] tick balance=$296.96
   diag: trend_htf=ranging trend_mid=ranging skip=trend_mismatch
-[00:13:57] tick balance=$296.96
-  diag: trend_htf=ranging trend_mid=ranging skip=trend_mismatch
-[00:14:59] tick balance=$296.96
-  diag: trend_htf=ranging trend_mid=ranging skip=trend_mismatch
-[00:16:01] tick balance=$296.96
-  diag: trend=bearish skip=trend_immature trend_age_s=0 need_s=900
-[00:17:03] tick balance=$296.96
-  diag: trend=bearish skip=trend_immature trend_age_s=62 need_s=900
-[00:18:05] tick balance=$296.96
-  diag: trend_htf=ranging trend_mid=ranging skip=trend_mismatch
-[00:19:07] tick balance=$296.96
-  diag: trend_htf=ranging trend_mid=ranging skip=trend_mismatch
-[00:20:09] tick balance=$296.96
-  diag: trend_htf=ranging trend_mid=ranging skip=trend_mismatch
-[00:21:11] tick balance=$296.96
-  diag: trend_htf=ranging trend_mid=ranging skip=trend_mismatch
-[00:22:13] tick balance=$296.96
-  diag: trend_htf=ranging trend_mid=ranging skip=trend_mismatch
-[00:23:16] tick balance=$296.96
-  diag: trend_htf=ranging trend_mid=ranging skip=trend_mismatch
-[00:24:18] tick balance=$296.96
-  diag: trend_htf=ranging trend_mid=ranging skip=trend_mismatch
-[00:25:20] tick balance=$296.96
-  diag: trend_htf=ranging trend_mid=ranging skip=trend_mismatch
-[00:26:22] tick balance=$296.96
-  diag: trend_htf=ranging trend_mid=ranging skip=trend_mismatch
-[00:27:24] tick balance=$296.96
-  diag: trend_htf=ranging trend_mid=ranging skip=trend_mismatch
-[00:28:26] tick balance=$296.96
-  diag: trend_htf=ranging trend_mid=ranging skip=trend_mismatch
-[00:29:29] tick balance=$296.96
-  diag: trend_htf=ranging trend_mid=ranging skip=trend_mismatch
-[00:30:32] tick balance=$296.96
-  diag: trend_htf=ranging trend_mid=ranging skip=trend_mismatch
-[00:31:34] tick balance=$296.96
-  diag: trend_htf=ranging trend_mid=ranging skip=trend_mismatch
-[00:32:36] tick balance=$296.96
-  diag: trend_htf=ranging trend_mid=ranging skip=trend_mismatch
-[00:33:39] tick balance=$296.96
-  diag: trend_htf=ranging trend_mid=ranging skip=trend_mismatch
-[00:34:41] tick balance=$296.96
-  diag: trend_htf=ranging trend_mid=ranging skip=trend_mismatch
-[00:35:42] tick balance=$296.96
-  diag: trend_htf=ranging trend_mid=ranging skip=trend_mismatch
-[00:36:45] tick balance=$296.96
-  diag: trend_htf=ranging trend_mid=ranging skip=trend_mismatch
-[00:37:48] tick balance=$296.96
-  diag: trend_htf=ranging trend_mid=ranging skip=trend_mismatch
-[00:38:50] tick balance=$296.96
-  diag: trend_htf=ranging trend_mid=ranging skip=trend_mismatch
-[00:39:52] tick balance=$296.96
-  diag: trend_htf=ranging trend_mid=ranging skip=trend_mismatch
-[00:40:54] tick balance=$296.96
-  diag: trend_htf=ranging trend_mid=ranging skip=trend_mismatch
-[00:41:57] tick balance=$296.96
-  diag: trend_htf=ranging trend_mid=ranging skip=trend_mismatch
-[00:42:59] tick balance=$296.96
-  diag: trend_htf=ranging trend_mid=ranging skip=trend_mismatch
-[00:44:01] tick balance=$296.96
-  diag: trend_htf=ranging trend_mid=ranging skip=trend_mismatch
-[00:45:04] tick balance=$296.96
-  diag: trend_htf=ranging trend_mid=ranging skip=trend_mismatch
-[00:46:06] tick balance=$296.96
-  diag: trend_htf=ranging trend_mid=ranging skip=trend_mismatch
-[00:47:08] tick balance=$296.96
-  diag: trend_htf=ranging trend_mid=ranging skip=trend_mismatch
-[00:48:11] tick balance=$296.96
-  diag: trend_htf=ranging trend_mid=ranging skip=trend_mismatch
-[00:49:13] tick balance=$296.96
-  diag: trend_htf=ranging trend_mid=ranging skip=trend_mismatch
-[00:50:16] tick balance=$296.96
-  diag: trend_htf=ranging trend_mid=ranging skip=trend_mismatch
-[00:51:18] tick balance=$296.96
-  diag: trend_htf=ranging trend_mid=ranging skip=trend_mismatch
-[00:52:20] tick balance=$296.96
-  diag: trend_htf=ranging trend_mid=ranging skip=trend_mismatch
-[00:53:22] tick balance=$296.96
-  diag: trend_htf=ranging trend_mid=ranging skip=trend_mismatch
-[00:54:24] tick balance=$296.96
-  diag: trend_htf=ranging trend_mid=ranging skip=trend_mismatch
+[04:51:38] tick balance=$296.96
+  diag: trend=bearish skip=ema_overextended price=40.8 ema20_h4=42.2 dist=1.4 max_dist=1.4
+[04:52:40] tick balance=$296.96
+  diag: trend=bearish skip=ema_overextended price=40.8 ema20_h4=42.2 dist=1.4 max_dist=1.4
+[04:53:42] tick balance=$296.96
+  diag: trend=bearish skip=ema_overextended price=40.8 ema20_h4=42.2 dist=1.4 max_dist=1.4
+[04:54:44] tick balance=$296.96
+  diag: trend=bearish skip=ema_overextended price=40.8 ema20_h4=42.2 dist=1.4 max_dist=1.4
 ```
