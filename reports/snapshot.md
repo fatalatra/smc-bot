@@ -1,6 +1,7 @@
-# Bot Snapshot — 2026-04-27 14:55 UTC
+# Bot Snapshot — 2026-04-27 18:55 UTC
 
-## Service: active
+## Service: inactive
+unknown
 balance=$317.63
 
 ## Config
@@ -98,27 +99,6 @@ httpx.ConnectError: [SSL: TLSV1_ALERT_INTERNAL_ERROR] tlsv1 alert internal error
 
 ## Last 100 Log Lines
 ```
-[16:19:24] tick balance=$317.63
-  diag: trend_htf=ranging trend_mid=ranging skip=trend_mismatch
-  range: regime=trend atr_ratio=0.84 adx=22.4 t_h4=bullish t_h1=ranging tf_conflict_s=0
-[16:20:27] tick balance=$317.63
-  diag: trend_htf=ranging trend_mid=ranging skip=trend_mismatch
-  range: regime=trend atr_ratio=0.84 adx=22.5 t_h4=bullish t_h1=ranging tf_conflict_s=0
-[16:21:30] tick balance=$317.63
-  diag: trend_htf=ranging trend_mid=ranging skip=trend_mismatch
-  range: regime=trend atr_ratio=0.85 adx=22.5 t_h4=bullish t_h1=ranging tf_conflict_s=0
-[16:22:33] tick balance=$317.63
-  diag: trend_htf=ranging trend_mid=ranging skip=trend_mismatch
-  range: regime=trend atr_ratio=0.85 adx=22.5 t_h4=bullish t_h1=ranging tf_conflict_s=0
-[16:23:38] tick balance=$317.63
-  diag: trend_htf=ranging trend_mid=ranging skip=trend_mismatch
-  range: regime=trend atr_ratio=0.85 adx=22.5 t_h4=bullish t_h1=ranging tf_conflict_s=0
-[16:24:41] tick balance=$317.63
-  diag: trend_htf=ranging trend_mid=ranging skip=trend_mismatch
-  range: regime=trend atr_ratio=0.85 adx=22.5 t_h4=bullish t_h1=ranging tf_conflict_s=0
-[tick] fetch err: 
-[16:26:58] tick balance=$317.63
-  diag: trend_htf=ranging trend_mid=ranging skip=trend_mismatch
   range: regime=trend atr_ratio=0.85 adx=22.7 t_h4=bullish t_h1=ranging tf_conflict_s=0
 [16:28:01] tick balance=$317.63
   diag: trend_htf=ranging trend_mid=ranging skip=trend_mismatch
@@ -198,4 +178,25 @@ httpx.ConnectError: [SSL: TLSV1_ALERT_INTERNAL_ERROR] tlsv1 alert internal error
 [16:54:25] tick balance=$317.63
   diag: trend_htf=ranging trend_mid=ranging skip=trend_mismatch
   range: regime=trend atr_ratio=0.93 adx=23.9 t_h4=bullish t_h1=ranging tf_conflict_s=0
+[16:55:29] tick balance=$317.63
+  diag: trend_htf=ranging trend_mid=ranging skip=trend_mismatch
+  range: regime=trend atr_ratio=0.93 adx=23.9 t_h4=bullish t_h1=ranging tf_conflict_s=0
+[16:56:33] tick balance=$317.63
+  diag: trend_htf=ranging trend_mid=ranging skip=trend_mismatch
+  range: regime=trend atr_ratio=0.93 adx=23.9 t_h4=bullish t_h1=ranging tf_conflict_s=0
+[16:57:36] tick balance=$317.63
+  diag: trend_htf=ranging trend_mid=ranging skip=trend_mismatch
+  range: regime=trend atr_ratio=0.93 adx=23.9 t_h4=bullish t_h1=ranging tf_conflict_s=0
+[16:58:39] tick balance=$317.63
+  diag: trend_htf=ranging trend_mid=ranging skip=trend_mismatch
+  range: regime=trend atr_ratio=0.93 adx=23.9 t_h4=bullish t_h1=ranging tf_conflict_s=0
+[16:59:42] tick balance=$317.63
+  diag: trend_htf=ranging trend_mid=ranging skip=trend_mismatch
+  range: regime=trend atr_ratio=0.93 adx=23.8 t_h4=bullish t_h1=ranging tf_conflict_s=0
+[17:00:48] tick balance=$317.63
+  diag: trend_htf=ranging trend_mid=ranging skip=trend_mismatch
+  range: regime=trend atr_ratio=0.91 adx=23.8 t_h4=bullish t_h1=ranging tf_conflict_s=0
+[17:01:51] tick balance=$317.63
+  diag: trend_htf=ranging trend_mid=ranging skip=trend_mismatch
+  range: regime=trend atr_ratio=0.92 adx=23.7 t_h4=bullish t_h1=ranging tf_conflict_s=0
 ```
