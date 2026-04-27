@@ -1,4 +1,4 @@
-# Bot Snapshot — 2026-04-27 02:55 UTC
+# Bot Snapshot — 2026-04-27 06:55 UTC
 
 ## Service: active
 balance=$317.63
@@ -50,26 +50,25 @@ none
 
 ## Diag Summary (last ~4h)
 ```
-     25 trend=bullish skip=ema_overextended price=42.9 ema20_h4=41.6 dist=1.3 max_dist=0.8
-     23 trend=bullish skip=ema_overextended price=42.3 ema20_h4=41.4 dist=0.9 max_dist=0.7
-     17 trend=bullish skip=ema_overextended price=42.8 ema20_h4=41.5 dist=1.3 max_dist=0.8
-     17 trend=bullish skip=ema_overextended price=42.5 ema20_h4=41.4 dist=1.1 max_dist=0.7
-     16 trend=bullish skip=ema_overextended price=42.4 ema20_h4=41.4 dist=1.0 max_dist=0.7
-     14 trend=bullish skip=ema_overextended price=42.7 ema20_h4=41.5 dist=1.2 max_dist=0.8
-     13 trend=bullish skip=ema_overextended price=42.4 ema20_h4=41.5 dist=0.9 max_dist=0.7
-     12 trend=bullish skip=ema_overextended price=42.8 ema20_h4=41.5 dist=1.2 max_dist=0.8
-     12 trend=bullish skip=ema_overextended price=42.6 ema20_h4=41.5 dist=1.1 max_dist=0.8
-     11 trend=bullish skip=ema_overextended price=42.7 ema20_h4=41.5 dist=1.1 max_dist=0.8
-     11 trend=bullish skip=ema_overextended price=42.5 ema20_h4=41.5 dist=1.0 max_dist=0.7
-      9 trend=bullish skip=ema_overextended price=42.8 ema20_h4=41.6 dist=1.3 max_dist=0.8
-      6 trend=bullish skip=ema_overextended price=42.7 ema20_h4=41.5 dist=1.2 max_dist=0.7
-      6 trend=bullish skip=ema_overextended price=42.3 ema20_h4=41.5 dist=0.8 max_dist=0.7
-      5 trend=bullish skip=ema_overextended price=42.8 ema20_h4=41.5 dist=1.2 max_dist=0.7
-      5 trend=bullish skip=ema_overextended price=42.7 ema20_h4=41.5 dist=1.1 max_dist=0.7
-      5 trend=bullish skip=ema_overextended price=42.2 ema20_h4=41.4 dist=0.8 max_dist=0.7
-      4 trend=bullish skip=ema_overextended price=42.9 ema20_h4=41.6 dist=1.4 max_dist=0.8
-      4 trend=bullish skip=ema_overextended price=42.6 ema20_h4=41.5 dist=1.1 max_dist=0.7
-      3 trend=bullish skip=ema_overextended price=43.0 ema20_h4=41.6 dist=1.4 max_dist=0.8
+    101 trend_htf=ranging trend_mid=ranging skip=trend_mismatch
+     26 trend=bullish skip=ema_overextended price=43.1 ema20_h4=41.7 dist=1.4 max_dist=0.8
+     16 trend=bullish skip=ema_overextended price=43.1 ema20_h4=41.6 dist=1.5 max_dist=0.8
+     15 trend=bullish skip=ema_overextended price=43.2 ema20_h4=41.7 dist=1.4 max_dist=0.8
+     12 trend=bullish skip=ema_overextended price=43.2 ema20_h4=41.6 dist=1.6 max_dist=0.8
+     11 trend=bullish skip=ema_overextended price=43.3 ema20_h4=41.6 dist=1.7 max_dist=0.8
+      9 trend=bullish skip=ema_overextended price=43.5 ema20_h4=41.6 dist=1.9 max_dist=0.8
+      9 trend=bullish skip=ema_overextended price=43.2 ema20_h4=41.8 dist=1.5 max_dist=0.8
+      6 trend=bullish skip=ema_overextended price=43.1 ema20_h4=41.7 dist=1.3 max_dist=0.8
+      5 trend=bullish skip=ema_overextended price=43.0 ema20_h4=41.6 dist=1.5 max_dist=0.8
+      5 trend=bullish skip=ema_overextended price=43.0 ema20_h4=41.6 dist=1.4 max_dist=0.8
+      5 trend=bullish skip=ema_overextended price=42.9 ema20_h4=41.6 dist=1.3 max_dist=0.8
+      4 trend=bullish skip=ema_overextended price=43.4 ema20_h4=41.6 dist=1.8 max_dist=0.8
+      4 trend=bullish skip=ema_overextended price=43.1 ema20_h4=41.6 dist=1.6 max_dist=0.8
+      4 trend=bullish skip=ema_overextended price=43.0 ema20_h4=41.7 dist=1.3 max_dist=0.8
+      3 trend=bullish skip=ema_overextended price=43.3 ema20_h4=41.8 dist=1.6 max_dist=0.8
+      3 trend=bullish skip=ema_overextended price=42.9 ema20_h4=41.6 dist=1.4 max_dist=0.8
+      1 trend=bullish skip=ema_overextended price=43.3 ema20_h4=41.8 dist=1.5 max_dist=0.8
+      1 trend=bullish skip=ema_overextended price=43.2 ema20_h4=41.7 dist=1.5 max_dist=0.8
 ```
 
 ## Errors
@@ -98,104 +97,104 @@ httpx.ConnectError: [SSL: TLSV1_ALERT_INTERNAL_ERROR] tlsv1 alert internal error
 
 ## Last 100 Log Lines
 ```
-  range: regime=trend atr_ratio=1.23 adx=52.0 t_h4=ranging t_h1=ranging tf_conflict_s=48450
-[04:20:30] tick balance=$317.63
-  diag: trend=bullish skip=ema_overextended price=42.9 ema20_h4=41.6 dist=1.3 max_dist=0.8
-  range: regime=trend atr_ratio=1.23 adx=52.0 t_h4=ranging t_h1=ranging tf_conflict_s=48513
-[04:21:33] tick balance=$317.63
-  diag: trend=bullish skip=ema_overextended price=42.8 ema20_h4=41.6 dist=1.3 max_dist=0.8
-  range: regime=trend atr_ratio=1.23 adx=52.0 t_h4=ranging t_h1=ranging tf_conflict_s=48576
-[04:22:36] tick balance=$317.63
-  diag: trend=bullish skip=ema_overextended price=42.9 ema20_h4=41.6 dist=1.3 max_dist=0.8
-  range: regime=trend atr_ratio=1.23 adx=52.0 t_h4=ranging t_h1=ranging tf_conflict_s=48639
-[04:23:39] tick balance=$317.63
-  diag: trend=bullish skip=ema_overextended price=42.9 ema20_h4=41.6 dist=1.3 max_dist=0.8
-  range: regime=trend atr_ratio=1.23 adx=52.0 t_h4=ranging t_h1=ranging tf_conflict_s=48702
-[04:24:42] tick balance=$317.63
-  diag: trend=bullish skip=ema_overextended price=42.9 ema20_h4=41.6 dist=1.3 max_dist=0.8
-  range: regime=trend atr_ratio=1.23 adx=52.0 t_h4=ranging t_h1=ranging tf_conflict_s=48765
-[04:25:45] tick balance=$317.63
-  diag: trend=bullish skip=ema_overextended price=42.9 ema20_h4=41.6 dist=1.3 max_dist=0.8
-  range: regime=trend atr_ratio=1.23 adx=52.0 t_h4=ranging t_h1=ranging tf_conflict_s=48828
-[04:26:48] tick balance=$317.63
-  diag: trend=bullish skip=ema_overextended price=42.9 ema20_h4=41.6 dist=1.3 max_dist=0.8
-  range: regime=trend atr_ratio=1.23 adx=52.0 t_h4=ranging t_h1=ranging tf_conflict_s=48891
-[04:27:51] tick balance=$317.63
-  diag: trend=bullish skip=ema_overextended price=42.9 ema20_h4=41.6 dist=1.3 max_dist=0.8
-  range: regime=trend atr_ratio=1.23 adx=52.0 t_h4=ranging t_h1=ranging tf_conflict_s=48955
-[04:28:54] tick balance=$317.63
-  diag: trend=bullish skip=ema_overextended price=42.8 ema20_h4=41.6 dist=1.3 max_dist=0.8
-  range: regime=trend atr_ratio=1.23 adx=52.0 t_h4=ranging t_h1=ranging tf_conflict_s=49018
-[04:29:58] tick balance=$317.63
-  diag: trend=bullish skip=ema_overextended price=42.9 ema20_h4=41.6 dist=1.3 max_dist=0.8
-  range: regime=trend atr_ratio=1.23 adx=52.0 t_h4=ranging t_h1=ranging tf_conflict_s=49082
-[04:31:02] tick balance=$317.63
-  diag: trend=bullish skip=ema_overextended price=42.9 ema20_h4=41.6 dist=1.3 max_dist=0.8
-  range: regime=trend atr_ratio=1.15 adx=52.0 t_h4=ranging t_h1=ranging tf_conflict_s=49146
-[04:32:05] tick balance=$317.63
-  diag: trend=bullish skip=ema_overextended price=42.9 ema20_h4=41.6 dist=1.4 max_dist=0.8
-  range: regime=trend atr_ratio=1.15 adx=52.1 t_h4=ranging t_h1=ranging tf_conflict_s=49209
-[04:33:08] tick balance=$317.63
-  diag: trend=bullish skip=ema_overextended price=42.9 ema20_h4=41.6 dist=1.3 max_dist=0.8
-  range: regime=trend atr_ratio=1.15 adx=52.1 t_h4=ranging t_h1=ranging tf_conflict_s=49272
-[04:34:12] tick balance=$317.63
-  diag: trend=bullish skip=ema_overextended price=42.9 ema20_h4=41.6 dist=1.3 max_dist=0.8
-  range: regime=trend atr_ratio=1.15 adx=52.1 t_h4=ranging t_h1=ranging tf_conflict_s=49335
-[04:35:14] tick balance=$317.63
-  diag: trend=bullish skip=ema_overextended price=42.8 ema20_h4=41.6 dist=1.3 max_dist=0.8
-  range: regime=trend atr_ratio=1.16 adx=52.1 t_h4=ranging t_h1=ranging tf_conflict_s=49397
-[04:36:16] tick balance=$317.63
-  diag: trend=bullish skip=ema_overextended price=42.8 ema20_h4=41.6 dist=1.3 max_dist=0.8
-  range: regime=trend atr_ratio=1.16 adx=52.1 t_h4=ranging t_h1=ranging tf_conflict_s=49460
-[04:37:20] tick balance=$317.63
-  diag: trend=bullish skip=ema_overextended price=42.8 ema20_h4=41.5 dist=1.3 max_dist=0.8
-  range: regime=trend atr_ratio=1.17 adx=52.1 t_h4=ranging t_h1=ranging tf_conflict_s=49523
-[04:38:22] tick balance=$317.63
-  diag: trend=bullish skip=ema_overextended price=42.8 ema20_h4=41.5 dist=1.2 max_dist=0.8
-  range: regime=trend atr_ratio=1.18 adx=52.1 t_h4=ranging t_h1=ranging tf_conflict_s=49585
-[04:39:26] tick balance=$317.63
-  diag: trend=bullish skip=ema_overextended price=42.8 ema20_h4=41.5 dist=1.3 max_dist=0.8
-  range: regime=trend atr_ratio=1.18 adx=52.1 t_h4=ranging t_h1=ranging tf_conflict_s=49649
-[04:40:29] tick balance=$317.63
-  diag: trend=bullish skip=ema_overextended price=42.8 ema20_h4=41.5 dist=1.3 max_dist=0.8
-  range: regime=trend atr_ratio=1.18 adx=52.1 t_h4=ranging t_h1=ranging tf_conflict_s=49713
-[04:41:33] tick balance=$317.63
-  diag: trend=bullish skip=ema_overextended price=42.9 ema20_h4=41.6 dist=1.3 max_dist=0.8
-  range: regime=trend atr_ratio=1.18 adx=52.1 t_h4=ranging t_h1=ranging tf_conflict_s=49776
-[04:42:36] tick balance=$317.63
-  diag: trend=bullish skip=ema_overextended price=42.9 ema20_h4=41.6 dist=1.3 max_dist=0.8
-  range: regime=trend atr_ratio=1.18 adx=52.1 t_h4=ranging t_h1=ranging tf_conflict_s=49839
-[04:43:39] tick balance=$317.63
-  diag: trend=bullish skip=ema_overextended price=42.9 ema20_h4=41.6 dist=1.3 max_dist=0.8
-  range: regime=trend atr_ratio=1.18 adx=52.1 t_h4=ranging t_h1=ranging tf_conflict_s=49902
-[04:44:41] tick balance=$317.63
-  diag: trend=bullish skip=ema_overextended price=42.9 ema20_h4=41.6 dist=1.3 max_dist=0.8
-  range: regime=trend atr_ratio=1.18 adx=52.1 t_h4=ranging t_h1=ranging tf_conflict_s=49964
-[04:45:44] tick balance=$317.63
-  diag: trend=bullish skip=ema_overextended price=42.9 ema20_h4=41.6 dist=1.3 max_dist=0.8
-  range: regime=trend atr_ratio=1.12 adx=52.2 t_h4=ranging t_h1=ranging tf_conflict_s=50028
-[04:46:48] tick balance=$317.63
-  diag: trend=bullish skip=ema_overextended price=42.9 ema20_h4=41.6 dist=1.4 max_dist=0.8
-  range: regime=trend atr_ratio=1.14 adx=52.2 t_h4=ranging t_h1=ranging tf_conflict_s=50091
-[04:47:51] tick balance=$317.63
-  diag: trend=bullish skip=ema_overextended price=42.9 ema20_h4=41.6 dist=1.3 max_dist=0.8
-  range: regime=trend atr_ratio=1.14 adx=52.2 t_h4=ranging t_h1=ranging tf_conflict_s=50154
-[04:48:54] tick balance=$317.63
-  diag: trend=bullish skip=ema_overextended price=42.9 ema20_h4=41.6 dist=1.4 max_dist=0.8
-  range: regime=trend atr_ratio=1.14 adx=52.3 t_h4=ranging t_h1=ranging tf_conflict_s=50217
-[04:49:56] tick balance=$317.63
-  diag: trend=bullish skip=ema_overextended price=43.0 ema20_h4=41.6 dist=1.4 max_dist=0.8
-  range: regime=trend atr_ratio=1.15 adx=52.3 t_h4=ranging t_h1=ranging tf_conflict_s=50280
-[04:50:59] tick balance=$317.63
-  diag: trend=bullish skip=ema_overextended price=42.9 ema20_h4=41.6 dist=1.4 max_dist=0.8
-  range: regime=trend atr_ratio=1.15 adx=52.4 t_h4=ranging t_h1=ranging tf_conflict_s=50343
-[04:52:03] tick balance=$317.63
-  diag: trend=bullish skip=ema_overextended price=43.0 ema20_h4=41.6 dist=1.4 max_dist=0.8
-  range: regime=trend atr_ratio=1.15 adx=52.4 t_h4=ranging t_h1=ranging tf_conflict_s=50406
-[04:53:06] tick balance=$317.63
-  diag: trend=bullish skip=ema_overextended price=43.0 ema20_h4=41.6 dist=1.4 max_dist=0.8
-  range: regime=trend atr_ratio=1.15 adx=52.4 t_h4=ranging t_h1=ranging tf_conflict_s=50469
-[04:54:09] tick balance=$317.63
-  diag: trend=bullish skip=ema_overextended price=43.1 ema20_h4=41.6 dist=1.5 max_dist=0.8
-  range: regime=trend atr_ratio=1.17 adx=52.6 t_h4=ranging t_h1=ranging tf_conflict_s=50532
+  range: regime=trend atr_ratio=1.09 adx=40.2 t_h4=bullish t_h1=ranging tf_conflict_s=0
+[08:21:05] tick balance=$317.63
+  diag: trend_htf=ranging trend_mid=ranging skip=trend_mismatch
+  range: regime=trend atr_ratio=1.1 adx=40.2 t_h4=bullish t_h1=ranging tf_conflict_s=0
+[08:22:08] tick balance=$317.63
+  diag: trend_htf=ranging trend_mid=ranging skip=trend_mismatch
+  range: regime=trend atr_ratio=1.1 adx=40.2 t_h4=bullish t_h1=ranging tf_conflict_s=0
+[08:23:11] tick balance=$317.63
+  diag: trend_htf=ranging trend_mid=ranging skip=trend_mismatch
+  range: regime=trend atr_ratio=1.1 adx=40.2 t_h4=bullish t_h1=ranging tf_conflict_s=0
+[08:24:14] tick balance=$317.63
+  diag: trend_htf=ranging trend_mid=ranging skip=trend_mismatch
+  range: regime=trend atr_ratio=1.1 adx=40.2 t_h4=bullish t_h1=ranging tf_conflict_s=0
+[08:25:17] tick balance=$317.63
+  diag: trend_htf=ranging trend_mid=ranging skip=trend_mismatch
+  range: regime=trend atr_ratio=1.1 adx=40.2 t_h4=bullish t_h1=ranging tf_conflict_s=0
+[08:26:21] tick balance=$317.63
+  diag: trend_htf=ranging trend_mid=ranging skip=trend_mismatch
+  range: regime=trend atr_ratio=1.1 adx=40.2 t_h4=bullish t_h1=ranging tf_conflict_s=0
+[08:27:24] tick balance=$317.63
+  diag: trend_htf=ranging trend_mid=ranging skip=trend_mismatch
+  range: regime=trend atr_ratio=1.1 adx=40.2 t_h4=bullish t_h1=ranging tf_conflict_s=0
+[08:28:27] tick balance=$317.63
+  diag: trend_htf=ranging trend_mid=ranging skip=trend_mismatch
+  range: regime=trend atr_ratio=1.1 adx=40.2 t_h4=bullish t_h1=ranging tf_conflict_s=0
+[08:29:30] tick balance=$317.63
+  diag: trend_htf=ranging trend_mid=ranging skip=trend_mismatch
+  range: regime=trend atr_ratio=1.1 adx=40.2 t_h4=bullish t_h1=ranging tf_conflict_s=0
+[08:30:33] tick balance=$317.63
+  diag: trend_htf=ranging trend_mid=ranging skip=trend_mismatch
+  range: regime=trend atr_ratio=1.06 adx=38.2 t_h4=bullish t_h1=ranging tf_conflict_s=0
+[08:31:36] tick balance=$317.63
+  diag: trend_htf=ranging trend_mid=ranging skip=trend_mismatch
+  range: regime=trend atr_ratio=1.14 adx=39.3 t_h4=bullish t_h1=ranging tf_conflict_s=0
+[08:32:40] tick balance=$317.63
+  diag: trend_htf=ranging trend_mid=ranging skip=trend_mismatch
+  range: regime=trend atr_ratio=1.14 adx=39.3 t_h4=bullish t_h1=ranging tf_conflict_s=0
+[08:33:42] tick balance=$317.63
+  diag: trend_htf=ranging trend_mid=ranging skip=trend_mismatch
+  range: regime=trend atr_ratio=1.14 adx=39.3 t_h4=bullish t_h1=ranging tf_conflict_s=0
+[08:34:45] tick balance=$317.63
+  diag: trend_htf=ranging trend_mid=ranging skip=trend_mismatch
+  range: regime=trend atr_ratio=1.14 adx=39.3 t_h4=bullish t_h1=ranging tf_conflict_s=0
+[08:35:49] tick balance=$317.63
+  diag: trend_htf=ranging trend_mid=ranging skip=trend_mismatch
+  range: regime=trend atr_ratio=1.14 adx=39.3 t_h4=bullish t_h1=ranging tf_conflict_s=0
+[08:36:52] tick balance=$317.63
+  diag: trend_htf=ranging trend_mid=ranging skip=trend_mismatch
+  range: regime=trend atr_ratio=1.14 adx=39.3 t_h4=bullish t_h1=ranging tf_conflict_s=0
+[08:37:57] tick balance=$317.63
+  diag: trend_htf=ranging trend_mid=ranging skip=trend_mismatch
+  range: regime=trend atr_ratio=1.14 adx=39.3 t_h4=bullish t_h1=ranging tf_conflict_s=0
+[08:39:00] tick balance=$317.63
+  diag: trend_htf=ranging trend_mid=ranging skip=trend_mismatch
+  range: regime=trend atr_ratio=1.14 adx=39.3 t_h4=bullish t_h1=ranging tf_conflict_s=0
+[08:40:04] tick balance=$317.63
+  diag: trend_htf=ranging trend_mid=ranging skip=trend_mismatch
+  range: regime=trend atr_ratio=1.14 adx=39.3 t_h4=bullish t_h1=ranging tf_conflict_s=0
+[08:41:08] tick balance=$317.63
+  diag: trend_htf=ranging trend_mid=ranging skip=trend_mismatch
+  range: regime=trend atr_ratio=1.14 adx=39.3 t_h4=bullish t_h1=ranging tf_conflict_s=0
+[08:42:12] tick balance=$317.63
+  diag: trend_htf=ranging trend_mid=ranging skip=trend_mismatch
+  range: regime=trend atr_ratio=1.14 adx=39.3 t_h4=bullish t_h1=ranging tf_conflict_s=0
+[08:43:15] tick balance=$317.63
+  diag: trend_htf=ranging trend_mid=ranging skip=trend_mismatch
+  range: regime=trend atr_ratio=1.14 adx=39.3 t_h4=bullish t_h1=ranging tf_conflict_s=0
+[08:44:18] tick balance=$317.63
+  diag: trend_htf=ranging trend_mid=ranging skip=trend_mismatch
+  range: regime=trend atr_ratio=1.14 adx=39.3 t_h4=bullish t_h1=ranging tf_conflict_s=0
+[08:45:21] tick balance=$317.63
+  diag: trend_htf=ranging trend_mid=ranging skip=trend_mismatch
+  range: regime=trend atr_ratio=1.12 adx=38.5 t_h4=bullish t_h1=ranging tf_conflict_s=0
+[08:46:25] tick balance=$317.63
+  diag: trend_htf=ranging trend_mid=ranging skip=trend_mismatch
+  range: regime=trend atr_ratio=1.13 adx=38.5 t_h4=bullish t_h1=ranging tf_conflict_s=0
+[08:47:28] tick balance=$317.63
+  diag: trend_htf=ranging trend_mid=ranging skip=trend_mismatch
+  range: regime=trend atr_ratio=1.14 adx=38.4 t_h4=bullish t_h1=ranging tf_conflict_s=0
+[08:48:31] tick balance=$317.63
+  diag: trend_htf=ranging trend_mid=ranging skip=trend_mismatch
+  range: regime=trend atr_ratio=1.14 adx=38.4 t_h4=bullish t_h1=ranging tf_conflict_s=0
+[08:49:35] tick balance=$317.63
+  diag: trend_htf=ranging trend_mid=ranging skip=trend_mismatch
+  range: regime=trend atr_ratio=1.14 adx=38.2 t_h4=bullish t_h1=ranging tf_conflict_s=0
+[08:50:39] tick balance=$317.63
+  diag: trend_htf=ranging trend_mid=ranging skip=trend_mismatch
+  range: regime=trend atr_ratio=1.15 adx=38.2 t_h4=bullish t_h1=ranging tf_conflict_s=0
+[08:51:42] tick balance=$317.63
+  diag: trend_htf=ranging trend_mid=ranging skip=trend_mismatch
+  range: regime=trend atr_ratio=1.15 adx=38.1 t_h4=bullish t_h1=ranging tf_conflict_s=0
+[08:52:46] tick balance=$317.63
+  diag: trend_htf=ranging trend_mid=ranging skip=trend_mismatch
+  range: regime=trend atr_ratio=1.15 adx=38.0 t_h4=bullish t_h1=ranging tf_conflict_s=0
+[08:53:49] tick balance=$317.63
+  diag: trend_htf=ranging trend_mid=ranging skip=trend_mismatch
+  range: regime=trend atr_ratio=1.16 adx=37.9 t_h4=bullish t_h1=ranging tf_conflict_s=0
+[08:54:52] tick balance=$317.63
+  diag: trend_htf=ranging trend_mid=ranging skip=trend_mismatch
+  range: regime=trend atr_ratio=1.16 adx=37.8 t_h4=bullish t_h1=ranging tf_conflict_s=0
 ```
